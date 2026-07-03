@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyectos — CSengine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/pages/proyectos.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="index.html">CSengine<i>.</i></a>
+    <div class="nav-links">
+      <a href="shopify.html">Shopify</a>
+      <a href="magento.html">Magento</a>
+      <a href="proyectos.html" class="is-active">Proyectos</a>
+      <a href="nosotros.html">Nosotros</a>
+    </div>
+    <a class="btn btn-lime" href="contacto.html">¿Hablamos?</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="ghost" data-parallax data-speed="-12">+200</div>
+  <div class="wrap">
+    <h1 data-hero>Cosas que hemos hecho<br><span class="soft">(y de las que presumimos)</span></h1>
+    <p class="intro" data-hero>Más de 200 proyectos en 20 años. Aquí va una muestra; el resto te lo contamos con un café.</p>
+  </div>
+</section>
+
+<section class="projects section-flush">
+  <div class="wrap">
+    <div class="filters" data-hero>
+      <button class="filter-btn is-active" data-filter="todos">Todos</button>
+      <button class="filter-btn" data-filter="shopify">Shopify</button>
+      <button class="filter-btn" data-filter="magento">Magento</button>
+      <button class="filter-btn" data-filter="omnichannel">Omnichannel</button>
+    </div>
+    <div class="proj-grid">
+      <article class="proj" data-cat="shopify" data-reveal>
+        <div class="ph"><span class="tag">Shopify Plus</span><img data-parallax data-speed="-9" src="https://picsum.photos/seed/proj-hackett/900/620" alt="Proyecto Hackett London"></div>
+        <div class="info"><h3>Hackett London</h3><span class="res">Migración global<br>multi-store</span></div>
+      </article>
+      <article class="proj" data-cat="magento" data-reveal>
+        <div class="ph"><span class="tag">Magento</span><img data-parallax data-speed="-9" src="https://picsum.photos/seed/proj-vertic/900/620" alt="Proyecto Vertic Outdoor"></div>
+        <div class="info"><h3>Vertic Outdoor</h3><span class="res">+40% conversión<br>tras el rediseño</span></div>
+      </article>
+      <article class="proj" data-cat="shopify" data-reveal>
+        <div class="ph"><span class="tag">Shopify</span><img data-parallax data-speed="-9" src="https://picsum.photos/seed/proj-dietetica/900/620" alt="Proyecto Dietética Central"></div>
+        <div class="info"><h3>Dietética Central</h3><span class="res">De 0 a líder<br>de su categoría</span></div>
+      </article>
+      <article class="proj" data-cat="omnichannel magento" data-reveal>
+        <div class="ph"><span class="tag">Omnichannel</span><img data-parallax data-speed="-9" src="https://picsum.photos/seed/proj-pepe/900/620" alt="Proyecto Pepe Jeans"></div>
+        <div class="info"><h3>Pepe Jeans</h3><span class="res">Física + online<br>en un solo stack</span></div>
+      </article>
+      <article class="proj" data-cat="magento" data-reveal>
+        <div class="ph"><span class="tag">Magento B2B</span><img data-parallax data-speed="-9" src="https://picsum.photos/seed/proj-b2b/900/620" alt="Proyecto B2B de distribución"></div>
+        <div class="info"><h3>Distribución B2B</h3><span class="res">Pedidos recurrentes<br>automatizados</span></div>
+      </article>
+      <article class="proj" data-cat="shopify" data-reveal>
+        <div class="ph"><span class="tag">Shopify</span><img data-parallax data-speed="-9" src="https://picsum.photos/seed/proj-dtc/900/620" alt="Proyecto marca DTC de moda"></div>
+        <div class="info"><h3>Marca DTC de moda</h3><span class="res">Lanzamiento en 8<br>semanas, 3 países</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="stats section-flush">
+  <div class="wrap stats-grid">
+    <div class="stat">
+      <div class="num"><span data-count="20">0</span></div>
+      <p>años de trayectoria haciendo esto mismo.</p>
+    </div>
+    <div class="stat">
+      <div class="num"><em>+</em><span data-count="200">0</span></div>
+      <p>proyectos entregados. Estos son solo una muestra.</p>
+    </div>
+    <div class="stat">
+      <div class="num"><em>+</em><span data-count="120">0</span></div>
+      <p>clientes. Muchos, desde hace muchos años.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact section-flush">
+  <div class="wrap">
+    <div>
+      <h2 data-reveal>¿El próximo, <i>el tuyo</i>?</h2>
+      <p class="sub" data-reveal>Cuéntanos tu proyecto y te diremos, con sentido común, cómo lo haríamos nosotros.</p>
+      <div class="meta" data-reveal>
+        <span><b>93 655 06 06</b> · info@csengine.es</span>
+        <span><b>Barcelona</b> · <b>Altea</b></span>
+      </div>
+    </div>
+    <form data-reveal onsubmit="return false">
+      <div class="field"><input type="text" placeholder="Tu nombre" required></div>
+      <div class="field"><input type="email" placeholder="Tu email" required></div>
+      <div class="field"><textarea rows="5" placeholder="Cuéntanos tu proyecto"></textarea></div>
+      <button class="btn btn-lime" type="submit">Enviar — te contestamos personas</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <p class="foot-claim">eCommerce y sentido común se dan la mano desde 2006.</p>
+        <span class="seal">★ 20 años · 2006—2026</span>
+      </div>
+      <div><h4>Servicios</h4><ul><li><a href="shopify.html">Shopify Plus</a></li><li><a href="magento.html">Magento</a></li><li><a href="auditorias.html">Auditorías</a></li><li><a href="mantenimiento.html">Mantenimiento</a></li></ul></div>
+      <div><h4>Compañía</h4><ul><li><a href="nosotros.html">Nosotros</a></li><li><a href="proyectos.html">Proyectos</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="#">Privacidad</a></li><li><a href="#">Cookies</a></li><li><a href="#">Protección de datos</a></li></ul></div>
+    </div>
+    <div class="foot-word">CSENGINE<i>.</i></div>
+    <div class="foot-legal">
+      <span>© 2026 DIGITIZE 360 SL — CSengine</span>
+      <span><a href="#">LinkedIn</a> · <a href="#">X / Twitter</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

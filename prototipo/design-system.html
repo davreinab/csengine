@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System — Prototipo CSengine</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/components.css">
+<style>
+  /* estilos exclusivos de esta página de documentación */
+  .ds-main{max-width:1100px;margin:0 auto;padding:120px 5vw 80px}
+  .ds-main h1{font-size:var(--fs-h2);margin-bottom:8px}
+  .ds-main .ds-sub{color:var(--ink-soft);margin-bottom:60px}
+  .ds-main h2{font-size:var(--fs-xl);margin:70px 0 24px;border-bottom:2px solid var(--lime);padding-bottom:10px}
+  .ds-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}
+  .ds-swatch{border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;font-size:var(--fs-xs)}
+  .ds-swatch i{display:block;height:64px}
+  .ds-swatch code{display:block;padding:10px 12px;background:var(--white)}
+  table.ds-table{width:100%;border-collapse:collapse;font-size:var(--fs-sm)}
+  .ds-table th,.ds-table td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  .ds-table th{font-family:var(--font-display);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.08em;color:var(--gray)}
+  .ds-table code{background:var(--lime-soft);color:var(--lime-deep);padding:2px 8px;border-radius:6px}
+  .ds-type div{border-bottom:1px solid var(--line);padding:14px 0}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="index.html">CSengine<i>.</i></a>
+    <span class="nav-links">design-system.html — hand-off vivo del prototipo</span>
+  </nav>
+</header>
+
+<main class="ds-main">
+  <h1>Design System del prototipo</h1>
+  <p class="ds-sub">Fuente de verdad: <code>design-tokens.json</code> → <code>styles/tokens.css</code> (generado). Componentes en <code>styles/components.css</code> (capa congelada). Validación: <code>node tools/lint-tokens.mjs</code>.</p>
+
+  <h2>Color</h2>
+  <div class="ds-grid">
+    <div class="ds-swatch"><i style="background:var(--lime)"></i><code>--lime · #A6CE47</code></div>
+    <div class="ds-swatch"><i style="background:var(--lime-hover)"></i><code>--lime-hover</code></div>
+    <div class="ds-swatch"><i style="background:var(--lime-soft)"></i><code>--lime-soft</code></div>
+    <div class="ds-swatch"><i style="background:var(--lime-deep)"></i><code>--lime-deep</code></div>
+    <div class="ds-swatch"><i style="background:var(--ink)"></i><code>--ink</code></div>
+    <div class="ds-swatch"><i style="background:var(--ink-soft)"></i><code>--ink-soft</code></div>
+    <div class="ds-swatch"><i style="background:var(--dark)"></i><code>--dark</code></div>
+    <div class="ds-swatch"><i style="background:var(--bg)"></i><code>--bg</code></div>
+    <div class="ds-swatch"><i style="background:var(--white)"></i><code>--white</code></div>
+    <div class="ds-swatch"><i style="background:var(--line)"></i><code>--line</code></div>
+    <div class="ds-swatch"><i style="background:var(--gray)"></i><code>--gray</code></div>
+    <div class="ds-swatch"><i style="background:var(--logo-gray)"></i><code>--logo-gray</code></div>
+  </div>
+
+  <h2>Tipografía</h2>
+  <div class="ds-type">
+    <div style="font-family:var(--font-display);font-weight:800;font-size:var(--fs-h1)">Sora — display (Aa)</div>
+    <div style="font-family:var(--font-body);font-size:var(--fs-md)">Montserrat — body (Aa). Escala: fs-xs · fs-sm · fs-base · fs-md · fs-lg · fs-xl · fs-2xl · fs-h3 · fs-ed · fs-h2 · fs-h1 · fs-mega · fs-stat · fs-marquee · fs-word · fs-ghost · fs-ghost-xl · fs-pre (clamps fluidos).</div>
+  </div>
+
+  <h2>Componentes (styles/components.css)</h2>
+  <table class="ds-table">
+    <tr><th>Componente</th><th>Clases</th><th>Uso</th></tr>
+    <tr><td>Header</td><td><code>.nav</code> <code>.logo</code> <code>.nav-links</code> <code>.is-active</code></td><td>Sticky con blur. Sin banners de oferta (regla de cliente).</td></tr>
+    <tr><td>Botones</td><td><code>.btn</code> + <code>.btn-lime</code> / <code>.btn-ghost</code> / <code>.btn-ghost-inv</code></td><td>Pill. Lime = CTA primaria.</td></tr>
+    <tr><td>Preloader</td><td><code>.preloader</code> <code>.pre-num</code> <code>.pre-bar</code></td><td>Solo home: cuenta 0→20 y abre telón.</td></tr>
+    <tr><td>Hero interior</td><td><code>.page-hero</code> <code>.ghost</code> <code>.hero-ctas</code></td><td>Título gigante + palabra fantasma con parallax.</td></tr>
+    <tr><td>Marquee logos</td><td><code>.logos</code> <code>.marquee</code> <code>.m-logo</code></td><td>Prueba social bajo el hero.</td></tr>
+    <tr><td>Cifras</td><td><code>.stats</code> <code>.stat</code> + <code>[data-count]</code></td><td>20 · +200 · +120 con contador.</td></tr>
+    <tr><td>Editorial</td><td><code>.editorial</code> <code>.hl</code> <code>.strip</code></td><td>Frase grande + tira de fotos parallax.</td></tr>
+    <tr><td>Servicios índice</td><td><code>.svc-list</code> <code>.svc</code> <code>.svc-preview</code></td><td>Lista numerada con preview flotante en hover.</td></tr>
+    <tr><td>Sección oscura</td><td><code>.factory</code> <code>.steps</code> (+<code>.steps-3</code>) <code>.factory-close</code></td><td>Proceso / argumentos con palabra fantasma horizontal.</td></tr>
+    <tr><td>Proyectos</td><td><code>.projects</code> <code>.proj-grid</code> (+<code>.stagger</code>) <code>.proj</code></td><td>Cards con foto parallax + tag plataforma + resultado.</td></tr>
+    <tr><td>Banda aniversario</td><td><code>.anniv</code> <code>.anniv-marquee</code> <code>.timeline</code> <code>.milestone</code></td><td>Marquee 20 AÑOS + hitos.</td></tr>
+    <tr><td>Testimonios</td><td><code>.quotes</code> <code>.quote</code></td><td>Cara + cita + logo.</td></tr>
+    <tr><td>Cards genéricas</td><td><code>.cards</code> <code>.card</code> (+<code>.card-featured</code>, <code>.c-icon</code>, <code>.c-list</code>)</td><td>Features, dolores, planes.</td></tr>
+    <tr><td>CTA + formulario</td><td><code>.contact</code> <code>.field</code> <code>.meta</code></td><td>Cierre de todas las páginas.</td></tr>
+    <tr><td>Footer</td><td><code>.foot-top</code> <code>.foot-word</code> <code>.foot-claim</code> <code>.seal</code></td><td>Wordmark gigante + sello 20 años.</td></tr>
+    <tr><td>Utilidades</td><td><code>.section-flush</code> <code>.sec-head</code></td><td>Quitar padding-top / encabezado de sección.</td></tr>
+  </table>
+
+  <h2>Convenciones de animación (js/main.js)</h2>
+  <table class="ds-table">
+    <tr><th>Atributo</th><th>Efecto</th></tr>
+    <tr><td><code>data-hero</code></td><td>Entrada escalonada de la parte alta (tras preloader en home).</td></tr>
+    <tr><td><code>data-reveal</code></td><td>Aparece al entrar en viewport (ScrollTrigger.batch, una vez).</td></tr>
+    <tr><td><code>data-parallax</code> + <code>data-speed</code></td><td>Parallax vertical con scrub (yPercent).</td></tr>
+    <tr><td><code>data-parallax-x</code></td><td>Parallax horizontal (palabras fantasma).</td></tr>
+    <tr><td><code>data-count</code></td><td>Contador numérico hasta el valor.</td></tr>
+  </table>
+  <p style="margin-top:14px;color:var(--ink-soft);font-size:var(--fs-sm)">Todo respeta <code>prefers-reduced-motion</code> vía <code>gsap.matchMedia()</code>.</p>
+
+  <h2>Mapa de páginas</h2>
+  <table class="ds-table">
+    <tr><th>Página</th><th>Archivo</th><th>CSS propio</th></tr>
+    <tr><td>Home</td><td><code>index.html</code></td><td><code>pages/home.css</code></td></tr>
+    <tr><td>Shopify</td><td><code>shopify.html</code></td><td>—</td></tr>
+    <tr><td>Magento</td><td><code>magento.html</code></td><td>—</td></tr>
+    <tr><td>Auditorías</td><td><code>auditorias.html</code></td><td>—</td></tr>
+    <tr><td>Mantenimiento</td><td><code>mantenimiento.html</code></td><td>—</td></tr>
+    <tr><td>Proyectos</td><td><code>proyectos.html</code></td><td><code>pages/proyectos.css</code> (filtros)</td></tr>
+    <tr><td>Nosotros</td><td><code>nosotros.html</code></td><td><code>pages/nosotros.css</code> (equipo)</td></tr>
+    <tr><td>Contacto</td><td><code>contacto.html</code></td><td><code>pages/contacto.css</code> (oficinas)</td></tr>
+  </table>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+/* CSengine · contacto.css — layout específico de la página Contacto */
+
+.contact.contact-page{padding-top:0}
+.offices{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:0 0 var(--sp-8)}
+.office{border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden;background:var(--white)}
+.office .o-ph{aspect-ratio:16/10;overflow:hidden}
+.office .o-ph img{width:100%;height:100%;object-fit:cover}
+.office .o-body{padding:26px 28px}
+.office h3{font-size:var(--fs-lg);margin-bottom:8px}
+.office p{color:var(--ink-soft);font-size:var(--fs-sm)}
+
+@media (max-width:960px){
+  .offices{grid-template-columns:1fr}
+}

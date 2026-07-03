@@ -1,0 +1,14 @@
+/* CSengine · nosotros.css — layout específico de la página Nosotros */
+
+.team{padding:0 0 var(--sp-8)}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.member figure{aspect-ratio:3/4;border-radius:var(--r-xl);overflow:hidden;background:var(--lime-soft);margin-bottom:16px}
+.member img{width:100%;height:100%;object-fit:cover}
+.member b{font-family:var(--font-display);display:block;font-size:var(--fs-base)}
+.member span{font-size:var(--fs-xs);color:var(--gray)}
+
+.values{padding:var(--sp-8) 0;background:var(--white);border-top:1px solid var(--line)}
+
+@media (max-width:960px){
+  .team-grid{grid-template-columns:1fr 1fr}
+}

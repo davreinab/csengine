@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.csengine.net)",
+      "Bash(curl -sL https://www.csengine.net/)",
+      "Bash(curl -sL https://www.csengine.net/ -o /tmp/csengine.html)",
+      "Read(//tmp/**)",
+      "Bash(grep -oE '\\(--e-global-color-[a-z0-9]+:#?[A-Fa-f0-9]{3,8}|font-family:\"[^\"]*\"\\)')",
+      "Bash(cp \"/Users/davidreinabartoll/Downloads/ad03e5d47f3930e6-stodio-webflow-io \\(1\\).jpg\" \"/Users/davidreinabartoll/proyectos/claude-projects/csengine/bench/bench-01-stodio-agency.jpg\")",
+      "Bash(cp \"/Users/davidreinabartoll/Downloads/f9f969b9ab7425c6-try-webflow-com.webp\" \"/Users/davidreinabartoll/proyectos/claude-projects/csengine/bench/bench-02-webflow-marketing.webp\")",
+      "WebFetch(domain:wolverineworldwide.com)",
+      "Bash(open *)",
+      "Bash(cp /Users/davidreinabartoll/.claude/skills/design-in-code/scripts/lint-tokens.mjs /Users/davidreinabartoll/proyectos/claude-projects/csengine/prototipo/tools/)",
+      "Bash(cp /Users/davidreinabartoll/.claude/skills/design-in-code/scripts/tokens-to-css.mjs /Users/davidreinabartoll/proyectos/claude-projects/csengine/prototipo/tools/)",
+      "Read(//Users/davidreinabartoll/.claude/skills/design-in-code/assets/**)",
+      "Bash(node tools/tokens-to-css.mjs)",
+      "Bash(node *)",
+      "Bash(git ls-remote *)"
+    ]
+  }
+}

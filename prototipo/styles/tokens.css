@@ -1,0 +1,70 @@
+/* AUTOGENERADO desde design-tokens.json — NO editar a mano.
+   Cambios de token: edita design-tokens.json y corre node tools/tokens-to-css.mjs */
+:root {
+  /* color */
+  --bg: #FAFAF6;
+  --ink: #26262C;
+  --ink-soft: #4A4A52;
+  --lime: #A6CE47;
+  --lime-hover: #B5D95C;
+  --lime-soft: #EDF5DA;
+  --lime-deep: #42521C;
+  --gray: #9E9E9E;
+  --line: #E4E4DC;
+  --white: #FFFFFF;
+  --dark: #1E1E23;
+  --logo-gray: #C4C4BC;
+  --header-veil: rgba(250, 250, 246, 0.82);
+  --bg-a12: rgba(250, 250, 246, 0.12);
+  --bg-a20: rgba(250, 250, 246, 0.2);
+  --bg-a65: rgba(250, 250, 246, 0.65);
+  --white-a15: rgba(255, 255, 255, 0.15);
+  --ink-a25: rgba(38, 38, 44, 0.25);
+  --ink-a80: rgba(38, 38, 44, 0.8);
+  --stroke-ghost: rgba(250, 250, 246, 0.12);
+
+  /* font */
+  --font-display: 'Sora', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  /* fontSize */
+  --fs-xs: 0.85rem;
+  --fs-sm: 0.95rem;
+  --fs-base: 1rem;
+  --fs-md: 1.1rem;
+  --fs-lg: 1.35rem;
+  --fs-xl: 1.6rem;
+  --fs-2xl: 2.6rem;
+  --fs-h3: clamp(1.5rem, 2.6vw, 2.3rem);
+  --fs-ed: clamp(1.9rem, 3.6vw, 3.2rem);
+  --fs-h2: clamp(2.2rem, 4.5vw, 3.8rem);
+  --fs-h1: clamp(2.8rem, 6.2vw, 5.4rem);
+  --fs-mega: clamp(3.4rem, 8vw, 7rem);
+  --fs-stat: clamp(4rem, 8vw, 7.5rem);
+  --fs-marquee: clamp(4rem, 9vw, 8rem);
+  --fs-word: clamp(4rem, 13.5vw, 13rem);
+  --fs-ghost: clamp(6rem, 14vw, 12rem);
+  --fs-pre: clamp(6rem, 20vw, 14rem);
+  --fs-ghost-xl: clamp(14rem, 34vw, 34rem);
+
+  /* space */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 16px;
+  --sp-4: 24px;
+  --sp-5: 40px;
+  --sp-6: 64px;
+  --sp-7: 96px;
+  --sp-8: 140px;
+
+  /* radius */
+  --r-md: 16px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  /* shadow */
+  --shadow-photo: 0 30px 60px rgba(38, 38, 44, 0.18);
+  --shadow-chip: 0 16px 40px rgba(38, 38, 44, 0.14);
+  --shadow-preview: 0 24px 50px rgba(38, 38, 44, 0.25);
+}
