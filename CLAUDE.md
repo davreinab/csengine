@@ -23,6 +23,14 @@ Propuesta de rediseño de https://www.csengine.net/ (agencia eCommerce, Shopify 
 - `js/main.js` → animaciones compartidas por convención de atributos (`data-hero`, `data-reveal`, `data-parallax`, `data-count`). No duplicar lógica GSAP en páginas.
 - `design-system.html` → hand-off vivo: tokens, componentes, mapa de páginas.
 
+## Colaboración a dos (NORMA DURA)
+
+En este repo trabajan **dos personas con sus IAs**. Coordinación obligatoria vía `LOG.md`:
+
+- **Al empezar cualquier sesión:** `git pull` y leer `LOG.md` de arriba hacia abajo **solo hasta la última entrada ya conocida** — las de arriba son lo que hizo el otro lado.
+- **En cada push:** añadir una entrada nueva al principio de `LOG.md` (fecha · autor · commits · qué cambió y qué afecta al otro), dentro del mismo push. **Ningún push sin entrada en el log.**
+- Podar entradas viejas ya asimiladas (~10 máx.); el histórico completo vive en git.
+
 ## Reglas duras (validadas por herramienta)
 
 1. Cero colores crudos (hex/rgb/hsl) fuera de `:root` — validado por `node tools/lint-tokens.mjs` (error).

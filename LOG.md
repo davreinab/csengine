@@ -1,0 +1,24 @@
+# LOG de cambios — coordinación entre colaboradores
+
+> **NORMAS DURAS de este archivo** (obligatorias para toda IA que trabaje en este repo):
+>
+> 1. **Antes de empezar a trabajar:** haz `git pull` y lee este log **de arriba hacia abajo solo hasta la última entrada que ya conozcas**. No hace falta leer el documento entero: las entradas nuevas (las de arriba) son lo que hizo el otro lado.
+> 2. **En cada push:** añade una entrada nueva **AL PRINCIPIO** de la lista (debajo de esta cabecera), en el mismo commit o push. Un push sin entrada en el log incumple las normas del proyecto.
+> 3. **Formato de entrada:** fecha · autor · hash(es) de commit · qué se hizo en 2–5 líneas orientadas a que el otro sepa **qué cambió y qué le afecta** (archivos clave, decisiones tomadas, cosas pendientes que le tocan al otro).
+> 4. **Poda:** las entradas viejas ya asimiladas por ambas partes se van borrando (mantener ~10 como máximo). El histórico completo ya lo guarda git; este archivo es solo el "ponte al día".
+> 5. Las decisiones de diseño cerradas NO van aquí: van a `CLAUDE.md` (normas) o `CONTEXTO.md` (briefing). Aquí solo actividad.
+
+---
+
+## 2026-07-03 · David + Claude · (este push)
+- Eliminado `test.html` (era solo una prueba de push del segundo colaborador — confirmado que funciona).
+- Creado este `LOG.md` con las normas de coordinación entre los dos colaboradores y sus IAs.
+- Añadida la norma dura del log a `CLAUDE.md` (sección "Reglas duras").
+- Estado del proyecto: prototipo navegable completo en `prototipo/` (8 páginas: home, shopify, magento, auditorias, mantenimiento, proyectos, nosotros, contacto) con tokens + lint gate. Todo verde.
+
+## 2026-07-03 · Colaborador 2 · e176552
+- Push de prueba: `test.html` con Hello World (ya borrado en la entrada superior).
+
+## 2026-07-03 · David + Claude · dd18842, a838f2d
+- Commit inicial del proyecto: `CONTEXTO.md` (análisis web actual + briefing 20 aniversario + benchmark), `propuesta-home.md`, prototipo completo en `prototipo/` y `CLAUDE.md` con las decisiones cerradas del cliente.
+- `.claude/settings.local.json` sacado del repo (configuración local).
