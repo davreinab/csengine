@@ -10,6 +10,13 @@
 
 ---
 
+## 2026-07-06 · David + Claude · (este push)
+- Documentación reorganizada en `context/`: `CONTEXTO.md` y `propuesta-home.md` movidos ahí, y nuevo `context/design.md` con las **normas de diseño acordadas con el cliente** (resaltado `.hl` solo subrayado lima, nada hardcodeado en CSS, etc.). Consultarlo antes de cualquier cambio visual.
+- Tokens reestructurados a **3 niveles** (primitivas → semánticas → componente) en `design-tokens.json`; `tokens.css` regenerado con `tools/tokens-to-css.mjs`.
+- **Eliminado el CSS por página** (`styles/pages/*.css`): todo consolidado en `styles/components.css`, que queda como capa congelada. Las 8 páginas HTML actualizadas en consecuencia.
+- Nuevos assets reales en `prototipo/img_d/` (logos de clientes, Shopify Plus, Google Cloud y fotos recurso) — van sustituyendo a los placeholders de picsum.
+- `CLAUDE.md` actualizado con la nueva estructura y normas. Lint verde (0 errores, 0 warnings).
+
 ## 2026-07-03 · David + Claude · (este push)
 - Eliminado `test.html` (era solo una prueba de push del segundo colaborador — confirmado que funciona).
 - Creado este `LOG.md` con las normas de coordinación entre los dos colaboradores y sus IAs.

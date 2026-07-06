@@ -18,7 +18,7 @@ const SRC = join(ROOT, 'design-tokens.json');
 const OUT = join(ROOT, 'styles', 'tokens.css');
 
 // prefijos por grupo; si la propia key ya empieza con el prefijo, no se repite
-const PREFIX = { color: '', font: 'font-', fontSize: '', space: '', radius: '', control: '' };
+const PREFIX = { color: '', font: 'font-', fontSize: '', space: '', radius: '', control: '', primitives: '', semantic: '', component: '' };
 
 function varName(group, key) {
   const p = PREFIX[group] ?? group + '-';

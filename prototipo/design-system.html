@@ -8,76 +8,105 @@
 <link rel="stylesheet" href="styles/tokens.css">
 <link rel="stylesheet" href="styles/components.css">
 <style>
-  /* estilos exclusivos de esta página de documentación */
-  .ds-main{max-width:1100px;margin:0 auto;padding:120px 5vw 80px}
-  .ds-main h1{font-size:var(--fs-h2);margin-bottom:8px}
-  .ds-main .ds-sub{color:var(--ink-soft);margin-bottom:60px}
-  .ds-main h2{font-size:var(--fs-xl);margin:70px 0 24px;border-bottom:2px solid var(--lime);padding-bottom:10px}
-  .ds-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}
-  .ds-swatch{border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;font-size:var(--fs-xs)}
-  .ds-swatch i{display:block;height:64px}
-  .ds-swatch code{display:block;padding:10px 12px;background:var(--white)}
+  /* estilos exclusivos de esta página de documentación (namespace ds-, whitelisteado en lint) */
+  .ds-main{max-width:var(--measure-doc);margin:0 auto;padding:var(--sp-130) var(--gutter) var(--sp-80)}
+  .ds-main h1{font-size:var(--fs-h2);margin-bottom:var(--sp-8)}
+  .ds-main .ds-sub{color:var(--color-text-soft);margin-bottom:var(--sp-60)}
+  .ds-main h2{font-size:var(--fs-xl);margin:var(--sp-70) 0 var(--sp-24);border-bottom:var(--bw-2) solid var(--color-accent);padding-bottom:var(--sp-10)}
+  .ds-main h3{font-size:var(--fs-md);margin:var(--sp-30) 0 var(--sp-14);color:var(--color-text-soft)}
+  .ds-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:var(--sp-16)}
+  .ds-swatch{border:var(--bw-1) solid var(--color-border);border-radius:var(--r-md);overflow:hidden;font-size:var(--fs-xs)}
+  .ds-swatch i{display:block;height:var(--mlogo-h)}
+  .ds-swatch code{display:block;padding:var(--sp-10) var(--sp-12);background:var(--color-surface)}
   table.ds-table{width:100%;border-collapse:collapse;font-size:var(--fs-sm)}
-  .ds-table th,.ds-table td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
-  .ds-table th{font-family:var(--font-display);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.08em;color:var(--gray)}
-  .ds-table code{background:var(--lime-soft);color:var(--lime-deep);padding:2px 8px;border-radius:6px}
-  .ds-type div{border-bottom:1px solid var(--line);padding:14px 0}
+  .ds-table th,.ds-table td{text-align:left;padding:var(--sp-12) var(--sp-14);border-bottom:var(--bw-1) solid var(--color-border);vertical-align:top}
+  .ds-table th{font-family:var(--font-display);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted)}
+  .ds-table code{background:var(--color-accent-soft);color:var(--color-accent-deep);padding:var(--sp-4) var(--sp-8);border-radius:var(--sp-6)}
+  .ds-type div{border-bottom:var(--bw-1) solid var(--color-border);padding:var(--sp-14) 0}
+  .ds-note{background:var(--color-accent-soft);border-radius:var(--r-md);padding:var(--sp-18) var(--sp-22);font-size:var(--fs-sm);color:var(--color-text)}
 </style>
 </head>
 <body>
 
 <header>
   <nav class="nav">
-    <a class="logo" href="index.html">CSengine<i>.</i></a>
+    <a class="logo" href="index.html"><img src="img_d/logos/csengine-logo.svg" alt="CSengine"></a>
     <span class="nav-links">design-system.html — hand-off vivo del prototipo</span>
   </nav>
 </header>
 
 <main class="ds-main">
   <h1>Design System del prototipo</h1>
-  <p class="ds-sub">Fuente de verdad: <code>design-tokens.json</code> → <code>styles/tokens.css</code> (generado). Componentes en <code>styles/components.css</code> (capa congelada). Validación: <code>node tools/lint-tokens.mjs</code>.</p>
+  <p class="ds-sub">Fuente de verdad: <code>design-tokens.json</code> → <code>styles/tokens.css</code> (generado con <code>node tools/tokens-to-css.mjs</code>). Un único archivo de estilos: <code>styles/components.css</code>. Validación: <code>node tools/lint-tokens.mjs</code>.</p>
 
-  <h2>Color</h2>
+  <h2>Arquitectura de variables (3 niveles)</h2>
+  <p class="ds-note"><b>Regla:</b> el CSS solo aplica estilos con variables. Los colores SIEMPRE via nivel semántico o de componente — las primitivas de color no se usan directamente en reglas. Nivel 1 <b>primitivas</b> (valores crudos: escalas de color, tipos, tamaños, espacios) → Nivel 2 <b>semánticas</b> (roles: <code>--color-page</code>, <code>--color-text</code>, <code>--color-accent</code>…) → Nivel 3 <b>componente</b> (<code>--btn-primary-bg</code>, <code>--card-radius</code>, <code>--mlogo-w</code>…).</p>
+
+  <h3>1 · Primitivas (muestra)</h3>
   <div class="ds-grid">
-    <div class="ds-swatch"><i style="background:var(--lime)"></i><code>--lime · #A6CE47</code></div>
-    <div class="ds-swatch"><i style="background:var(--lime-hover)"></i><code>--lime-hover</code></div>
-    <div class="ds-swatch"><i style="background:var(--lime-soft)"></i><code>--lime-soft</code></div>
-    <div class="ds-swatch"><i style="background:var(--lime-deep)"></i><code>--lime-deep</code></div>
-    <div class="ds-swatch"><i style="background:var(--ink)"></i><code>--ink</code></div>
-    <div class="ds-swatch"><i style="background:var(--ink-soft)"></i><code>--ink-soft</code></div>
-    <div class="ds-swatch"><i style="background:var(--dark)"></i><code>--dark</code></div>
-    <div class="ds-swatch"><i style="background:var(--bg)"></i><code>--bg</code></div>
-    <div class="ds-swatch"><i style="background:var(--white)"></i><code>--white</code></div>
-    <div class="ds-swatch"><i style="background:var(--line)"></i><code>--line</code></div>
-    <div class="ds-swatch"><i style="background:var(--gray)"></i><code>--gray</code></div>
-    <div class="ds-swatch"><i style="background:var(--logo-gray)"></i><code>--logo-gray</code></div>
+    <div class="ds-swatch"><i style="background:var(--lime-300)"></i><code>--lime-300</code></div>
+    <div class="ds-swatch"><i style="background:var(--lime-400)"></i><code>--lime-400</code></div>
+    <div class="ds-swatch"><i style="background:var(--lime-500)"></i><code>--lime-500 · #A6CE47</code></div>
+    <div class="ds-swatch"><i style="background:var(--lime-700)"></i><code>--lime-700</code></div>
+    <div class="ds-swatch"><i style="background:var(--gray-0)"></i><code>--gray-0</code></div>
+    <div class="ds-swatch"><i style="background:var(--gray-50)"></i><code>--gray-50</code></div>
+    <div class="ds-swatch"><i style="background:var(--gray-200)"></i><code>--gray-200</code></div>
+    <div class="ds-swatch"><i style="background:var(--gray-400)"></i><code>--gray-400</code></div>
+    <div class="ds-swatch"><i style="background:var(--gray-500)"></i><code>--gray-500</code></div>
+    <div class="ds-swatch"><i style="background:var(--gray-700)"></i><code>--gray-700</code></div>
+    <div class="ds-swatch"><i style="background:var(--gray-900)"></i><code>--gray-900</code></div>
+    <div class="ds-swatch"><i style="background:var(--gray-950)"></i><code>--gray-950</code></div>
   </div>
+  <p style="margin-top:14px;font-size:var(--fs-sm);color:var(--color-text-soft)">+ alfas (<code>--gray-50-a12/20/65/82</code>, <code>--gray-900-a25/80</code>, <code>--white-a15</code>), fuentes (<code>--font-sora</code>, <code>--font-montserrat</code>), escala tipográfica <code>--fs-*</code>, espacios <code>--sp-1..8</code>, radios <code>--r-*</code> y sombras <code>--shadow-*</code>.</p>
+
+  <h3>2 · Semánticas</h3>
+  <div class="ds-grid">
+    <div class="ds-swatch"><i style="background:var(--color-page)"></i><code>--color-page</code></div>
+    <div class="ds-swatch"><i style="background:var(--color-surface)"></i><code>--color-surface</code></div>
+    <div class="ds-swatch"><i style="background:var(--color-surface-dark)"></i><code>--color-surface-dark</code></div>
+    <div class="ds-swatch"><i style="background:var(--color-text)"></i><code>--color-text</code></div>
+    <div class="ds-swatch"><i style="background:var(--color-text-soft)"></i><code>--color-text-soft</code></div>
+    <div class="ds-swatch"><i style="background:var(--color-text-muted)"></i><code>--color-text-muted</code></div>
+    <div class="ds-swatch"><i style="background:var(--color-border)"></i><code>--color-border</code></div>
+    <div class="ds-swatch"><i style="background:var(--color-accent)"></i><code>--color-accent</code></div>
+    <div class="ds-swatch"><i style="background:var(--color-accent-hover)"></i><code>--color-accent-hover</code></div>
+    <div class="ds-swatch"><i style="background:var(--color-accent-soft)"></i><code>--color-accent-soft</code></div>
+    <div class="ds-swatch"><i style="background:var(--color-accent-deep)"></i><code>--color-accent-deep</code></div>
+  </div>
+  <p style="margin-top:14px;font-size:var(--fs-sm);color:var(--color-text-soft)">+ inversas para fondos oscuros (<code>--color-text-inverse(-soft)</code>, <code>--color-border-inverse(-soft)</code>) y fuentes (<code>--font-display</code>, <code>--font-body</code>).</p>
+
+  <h3>3 · De componente (muestra)</h3>
+  <p style="font-size:var(--fs-sm);color:var(--color-text-soft)"><code>--header-*</code> <code>--btn-*</code> <code>--preloader-*</code> <code>--hl-underline</code> <code>--ghost-stroke(-inverse)</code> <code>--mlogo-*</code> <code>--stat-*</code> <code>--card-*</code> <code>--svc-*</code> <code>--factory-*</code> <code>--proj-*</code> <code>--anniv-*</code> <code>--timeline-track</code> <code>--quote-mark-color</code> <code>--field-*</code> <code>--footer-*</code> <code>--seal-*</code> <code>--filter-active-*</code> <code>--hero-badge-*</code> <code>--chip-*</code> — ver el tier <code>component</code> de <code>design-tokens.json</code>.</p>
 
   <h2>Tipografía</h2>
   <div class="ds-type">
     <div style="font-family:var(--font-display);font-weight:800;font-size:var(--fs-h1)">Sora — display (Aa)</div>
-    <div style="font-family:var(--font-body);font-size:var(--fs-md)">Montserrat — body (Aa). Escala: fs-xs · fs-sm · fs-base · fs-md · fs-lg · fs-xl · fs-2xl · fs-h3 · fs-ed · fs-h2 · fs-h1 · fs-mega · fs-stat · fs-marquee · fs-word · fs-ghost · fs-ghost-xl · fs-pre (clamps fluidos).</div>
+    <div style="font-family:var(--font-body);font-size:var(--fs-md)">Montserrat — body (Aa). Escala <code>--fs-*</code>: xs · sm · base · md · lg · xl · 2xl · h3 · ed · h2 · h1 · mega · stat · marquee · ghost · pre · ghost-xl (clamps fluidos).</div>
   </div>
 
-  <h2>Componentes (styles/components.css)</h2>
+  <h2>Componentes (styles/components.css — archivo único)</h2>
   <table class="ds-table">
     <tr><th>Componente</th><th>Clases</th><th>Uso</th></tr>
-    <tr><td>Header</td><td><code>.nav</code> <code>.logo</code> <code>.nav-links</code> <code>.is-active</code></td><td>Sticky con blur. Sin banners de oferta (regla de cliente).</td></tr>
+    <tr><td>Header</td><td><code>.nav</code> <code>.logo</code> <code>.nav-links</code> <code>.is-active</code></td><td>Sticky con blur, logo SVG oficial (36px). Sin banners de oferta (regla de cliente).</td></tr>
     <tr><td>Botones</td><td><code>.btn</code> + <code>.btn-lime</code> / <code>.btn-ghost</code> / <code>.btn-ghost-inv</code></td><td>Pill. Lime = CTA primaria.</td></tr>
-    <tr><td>Preloader</td><td><code>.preloader</code> <code>.pre-num</code> <code>.pre-bar</code></td><td>Solo home: cuenta 0→20 y abre telón.</td></tr>
+    <tr><td>Preloader</td><td><code>.preloader</code> <code>.pre-symbol</code> <code>.pre-num</code> <code>.pre-bar</code></td><td>Solo home: logo completo blanco + cuenta 0→20 y abre telón.</td></tr>
+    <tr><td>Hero home</td><td><code>.hero</code> <code>.hero-20</code> <code>.hero-badge</code> <code>.hero-visual</code> <code>.hero-photo</code> <code>.hero-chip</code></td><td>Claim gigante + "20" fantasma parallax + foto rotada + chip.</td></tr>
     <tr><td>Hero interior</td><td><code>.page-hero</code> <code>.ghost</code> <code>.hero-ctas</code></td><td>Título gigante + palabra fantasma con parallax.</td></tr>
-    <tr><td>Marquee logos</td><td><code>.logos</code> <code>.marquee</code> <code>.m-logo</code></td><td>Prueba social bajo el hero.</td></tr>
+    <tr><td>Marquee logos</td><td><code>.logos</code> <code>.marquee</code> <code>.m-logo</code></td><td>Logos reales de clientes en caja uniforme 180×64 (contain), grises al 55% → color en hover. Sin fondo propio ni bordes. Titular destacado con <code>.hl</code>.</td></tr>
     <tr><td>Cifras</td><td><code>.stats</code> <code>.stat</code> + <code>[data-count]</code></td><td>20 · +200 · +120 con contador.</td></tr>
-    <tr><td>Editorial</td><td><code>.editorial</code> <code>.hl</code> <code>.strip</code></td><td>Frase grande + tira de fotos parallax.</td></tr>
+    <tr><td>Editorial</td><td><code>.editorial</code> <code>.strip</code></td><td>Frase grande + tira de fotos parallax.</td></tr>
     <tr><td>Servicios índice</td><td><code>.svc-list</code> <code>.svc</code> <code>.svc-preview</code></td><td>Lista numerada con preview flotante en hover.</td></tr>
     <tr><td>Sección oscura</td><td><code>.factory</code> <code>.steps</code> (+<code>.steps-3</code>) <code>.factory-close</code></td><td>Proceso / argumentos con palabra fantasma horizontal.</td></tr>
-    <tr><td>Proyectos</td><td><code>.projects</code> <code>.proj-grid</code> (+<code>.stagger</code>) <code>.proj</code></td><td>Cards con foto parallax + tag plataforma + resultado.</td></tr>
+    <tr><td>Proyectos</td><td><code>.projects</code> <code>.proj-grid</code> (+<code>.stagger</code>) <code>.proj</code></td><td>Cards con imagen real de marca (parallax) + tag plataforma + resultado.</td></tr>
+    <tr><td>Filtros</td><td><code>.filters</code> <code>.filter-btn</code></td><td>Página Proyectos: filtro por plataforma (JS en main.js).</td></tr>
     <tr><td>Banda aniversario</td><td><code>.anniv</code> <code>.anniv-marquee</code> <code>.timeline</code> <code>.milestone</code></td><td>Marquee 20 AÑOS + hitos.</td></tr>
-    <tr><td>Testimonios</td><td><code>.quotes</code> <code>.quote</code></td><td>Cara + cita + logo.</td></tr>
-    <tr><td>Cards genéricas</td><td><code>.cards</code> <code>.card</code> (+<code>.card-featured</code>, <code>.c-icon</code>, <code>.c-list</code>)</td><td>Features, dolores, planes.</td></tr>
-    <tr><td>CTA + formulario</td><td><code>.contact</code> <code>.field</code> <code>.meta</code></td><td>Cierre de todas las páginas.</td></tr>
-    <tr><td>Footer</td><td><code>.foot-top</code> <code>.foot-word</code> <code>.foot-claim</code> <code>.seal</code></td><td>Wordmark gigante + sello 20 años.</td></tr>
-    <tr><td>Utilidades</td><td><code>.section-flush</code> <code>.sec-head</code></td><td>Quitar padding-top / encabezado de sección.</td></tr>
+    <tr><td>Testimonios</td><td><code>.quotes</code> <code>.quote</code></td><td>Comilla lima + cita + nombre/cargo. SIN foto de avatar (decisión del cliente).</td></tr>
+    <tr><td>Cards genéricas</td><td><code>.cards</code> <code>.card</code> (+<code>.card-featured</code>, <code>.c-icon</code>, <code>.c-list</code>)</td><td>Features, dolores, planes, valores.</td></tr>
+    <tr><td>Equipo</td><td><code>.team</code> <code>.team-grid</code> <code>.member</code> <code>.values</code></td><td>Página Nosotros: grid de fichas + valores.</td></tr>
+    <tr><td>Oficinas</td><td><code>.offices</code> <code>.office</code></td><td>Página Contacto: cards Barcelona / Altea.</td></tr>
+    <tr><td>CTA + formulario</td><td><code>.contact</code> (+<code>.contact-page</code>) <code>.field</code> <code>.meta</code></td><td>Cierre de todas las páginas.</td></tr>
+    <tr><td>Footer</td><td><code>.foot-top</code> <code>.foot-logo</code> <code>.foot-claim</code> <code>.seal</code></td><td>Logo oficial blanco + sello 20 años. (Sin wordmark tipográfico gigante: no pega con el logo — decisión del cliente.)</td></tr>
+    <tr><td>Utilidades</td><td><code>.section-flush</code> <code>.sec-head</code> <code>.hl</code></td><td>Quitar padding-top / encabezado de sección / <b>resaltado de palabras: ÚNICO efecto permitido, subrayado marcador lima</b> (global, vale en claro y oscuro).</td></tr>
   </table>
 
   <h2>Convenciones de animación (js/main.js)</h2>
@@ -89,20 +118,21 @@
     <tr><td><code>data-parallax-x</code></td><td>Parallax horizontal (palabras fantasma).</td></tr>
     <tr><td><code>data-count</code></td><td>Contador numérico hasta el valor.</td></tr>
   </table>
-  <p style="margin-top:14px;color:var(--ink-soft);font-size:var(--fs-sm)">Todo respeta <code>prefers-reduced-motion</code> vía <code>gsap.matchMedia()</code>.</p>
+  <p style="margin-top:14px;color:var(--color-text-soft);font-size:var(--fs-sm)">Todo respeta <code>prefers-reduced-motion</code> vía <code>gsap.matchMedia()</code>.</p>
 
   <h2>Mapa de páginas</h2>
   <table class="ds-table">
-    <tr><th>Página</th><th>Archivo</th><th>CSS propio</th></tr>
-    <tr><td>Home</td><td><code>index.html</code></td><td><code>pages/home.css</code></td></tr>
-    <tr><td>Shopify</td><td><code>shopify.html</code></td><td>—</td></tr>
-    <tr><td>Magento</td><td><code>magento.html</code></td><td>—</td></tr>
-    <tr><td>Auditorías</td><td><code>auditorias.html</code></td><td>—</td></tr>
-    <tr><td>Mantenimiento</td><td><code>mantenimiento.html</code></td><td>—</td></tr>
-    <tr><td>Proyectos</td><td><code>proyectos.html</code></td><td><code>pages/proyectos.css</code> (filtros)</td></tr>
-    <tr><td>Nosotros</td><td><code>nosotros.html</code></td><td><code>pages/nosotros.css</code> (equipo)</td></tr>
-    <tr><td>Contacto</td><td><code>contacto.html</code></td><td><code>pages/contacto.css</code> (oficinas)</td></tr>
+    <tr><th>Página</th><th>Archivo</th></tr>
+    <tr><td>Home</td><td><code>index.html</code></td></tr>
+    <tr><td>Shopify</td><td><code>shopify.html</code></td></tr>
+    <tr><td>Magento</td><td><code>magento.html</code></td></tr>
+    <tr><td>Auditorías</td><td><code>auditorias.html</code></td></tr>
+    <tr><td>Mantenimiento</td><td><code>mantenimiento.html</code></td></tr>
+    <tr><td>Proyectos</td><td><code>proyectos.html</code></td></tr>
+    <tr><td>Nosotros</td><td><code>nosotros.html</code></td></tr>
+    <tr><td>Contacto</td><td><code>contacto.html</code></td></tr>
   </table>
+  <p style="margin-top:14px;color:var(--color-text-soft);font-size:var(--fs-sm)">Sin CSS por página: todas las páginas cargan solo <code>tokens.css</code> + <code>components.css</code>.</p>
 </main>
 
 </body>

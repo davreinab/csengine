@@ -2,7 +2,12 @@
 
 ## Qué es este proyecto
 
-Propuesta de rediseño de https://www.csengine.net/ (agencia eCommerce, Shopify + Magento, cumple 20 años). El prototipo navegable vive en `prototipo/` — HTML/CSS/JS vanilla + GSAP, sin build. Contexto completo del cliente en `CONTEXTO.md`; estructura de contenidos en `propuesta-home.md`.
+Propuesta de rediseño de https://www.csengine.net/ (agencia eCommerce, Shopify + Magento, cumple 20 años). El prototipo navegable vive en `prototipo/` — HTML/CSS/JS vanilla + GSAP, sin build.
+
+**Toda la documentación de contexto y normas vive en `context/`:**
+- `context/CONTEXTO.md` — briefing del cliente, análisis de la web actual, benchmark.
+- `context/propuesta-home.md` — estructura de contenidos de la home aprobada.
+- `context/design.md` — **NORMAS DE DISEÑO acordadas con el cliente. Consultar antes de cualquier cambio visual; toda norma nueva se registra ahí.**
 
 ## Decisiones cerradas con el cliente (no re-litigar)
 
@@ -13,13 +18,14 @@ Propuesta de rediseño de https://www.csengine.net/ (agencia eCommerce, Shopify 
 - Shopify SIEMPRE antes que Magento en menús y jerarquías.
 - Cifras: 20 años · +200 proyectos · +120 clientes.
 - **No** abusar de pretítulos/eyebrows. **No** banners de oferta en movimiento en el header.
+- **Resaltado de palabras: SOLO subrayado marcador lima (clase `.hl`).** Nunca fondo-pastilla ni palabra coloreada. Detalle en `context/design.md` §1.
 - Animación: GSAP core + ScrollTrigger (parallax, precarga, reveals) respetando `prefers-reduced-motion`.
 
 ## Arquitectura del prototipo (`prototipo/`)
 
-- `design-tokens.json` → fuente de verdad. Genera `styles/tokens.css` con `node tools/tokens-to-css.mjs`. **Nunca editar tokens.css a mano.**
-- `styles/components.css` → capa CONGELADA de componentes compartidos. El trabajo por página no la edita; un componente nuevo se añade aquí + en `design-system.html`.
-- `styles/pages/*.css` → lo único que crece con cada página.
+- `design-tokens.json` → fuente de verdad, **3 niveles: primitivas → semánticas → de componente**. Genera `styles/tokens.css` con `node tools/tokens-to-css.mjs`. **Nunca editar tokens.css a mano.**
+- `styles/components.css` → **ÚNICO archivo de estilos** (sin CSS por página). Capa congelada; un componente nuevo se añade aquí + tier `component` de tokens + `design-system.html`.
+- **NADA hardcodeado en CSS:** colores solo vía `--color-*`/componente; gaps/paddings/margins solo vía `--sp-*`/ritmo; medidas vía `--measure-*`. Ver `context/design.md` §2.
 - `js/main.js` → animaciones compartidas por convención de atributos (`data-hero`, `data-reveal`, `data-parallax`, `data-count`). No duplicar lógica GSAP en páginas.
 - `design-system.html` → hand-off vivo: tokens, componentes, mapa de páginas.
 
