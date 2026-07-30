@@ -10,6 +10,9 @@
 
 ---
 
+## 2026-07-30 · David + Claude · (este push)
+- Añadido logo de **Casas** (`prototipo/img_d/casas.png`) al carrusel de clientes de la home (sección "Ellos ya nos aguantan desde hace años"), en las dos pistas del marquee. Sin cambios de CSS ni tokens. Lint verde.
+
 ## 2026-07-06 · David + Claude · (este push)
 - Documentación reorganizada en `context/`: `CONTEXTO.md` y `propuesta-home.md` movidos ahí, y nuevo `context/design.md` con las **normas de diseño acordadas con el cliente** (resaltado `.hl` solo subrayado lima, nada hardcodeado en CSS, etc.). Consultarlo antes de cualquier cambio visual.
 - Tokens reestructurados a **3 niveles** (primitivas → semánticas → componente) en `design-tokens.json`; `tokens.css` regenerado con `tools/tokens-to-css.mjs`.
