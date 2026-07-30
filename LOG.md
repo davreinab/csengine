@@ -10,6 +10,10 @@
 
 ---
 
+## 2026-07-30 · Gabriel + Claude · (este push)
+- Nuevos assets en `prototipo/img_d/`: carpeta `Sello shopify plus/` con el badge oficial de Shopify Plus (SVG + PNG, variantes negro/blanco, transparente y con tamaños Small/Large).
+- Carpeta `Logos partners/` creada pero vacía por ahora (Git no versiona carpetas vacías, así que no aparece en el commit); pendiente añadir contenido cuando esté disponible.
+
 ## 2026-07-06 · David + Claude · (este push)
 - Documentación reorganizada en `context/`: `CONTEXTO.md` y `propuesta-home.md` movidos ahí, y nuevo `context/design.md` con las **normas de diseño acordadas con el cliente** (resaltado `.hl` solo subrayado lima, nada hardcodeado en CSS, etc.). Consultarlo antes de cualquier cambio visual.
 - Tokens reestructurados a **3 niveles** (primitivas → semánticas → componente) en `design-tokens.json`; `tokens.css` regenerado con `tools/tokens-to-css.mjs`.
