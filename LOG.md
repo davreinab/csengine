@@ -10,6 +10,13 @@
 
 ---
 
+## 2026-07-30 · David + Claude · (este push)
+- **Home:** nueva sección **"Plataformas & partners"** (grid único de logos grises, hover a color) colocada tras la sección editorial y antes de Servicios. Logos oficiales en `prototipo/img_d/partners/` (Shopify, Magento, Adobe Commerce, Adyen, Nosto, Trusted Shops). Falta **Sysadminok** (no está en fuentes públicas): pendiente de archivo.
+- ⚠️ **Ojo divergencia de carpeta:** yo usé `img_d/partners/` y tú creaste `img_d/Logos partners/`. Unifiquemos en una sola; ahora mismo la sección apunta a `partners/`. Si prefieres tu carpeta, muevo assets y reapunto `src`.
+- Nuevos tokens de componente `--partner-*` y `--office-map-h` en `design-tokens.json` → `tokens.css` regenerado. Nuevas clases layout en `components.css`: `.partners/.partner-grid/.partner`, `.locations/.offices`, `.office-map`.
+- **Nosotros:** quitada la sección **"El equipo"** (grid de 8 miembros) y quitado el trío de fotos de la editorial. Nueva sección **"Dónde estamos"** con las 2 oficinas (Barcelona/Altea) reusando `.card` + `.c-list`, cada una con **mapa embebido de OpenStreetMap** (coordenadas geocodificadas, sin API key).
+- **Home:** "Ponles cara →" cambiado a "Conócenos mejor →" (ya no hay caras). Lint verde (0/0) en todo.
+
 ## 2026-07-30 · Gabriel + Claude · (este push)
 - Nuevos assets en `prototipo/img_d/`: carpeta `Sello shopify plus/` con el badge oficial de Shopify Plus (SVG + PNG, variantes negro/blanco, transparente y con tamaños Small/Large).
 - Carpeta `Logos partners/` creada pero vacía por ahora (Git no versiona carpetas vacías, así que no aparece en el commit); pendiente añadir contenido cuando esté disponible.
