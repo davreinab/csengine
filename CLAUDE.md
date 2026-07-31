@@ -8,6 +8,7 @@ Propuesta de rediseño de https://www.csengine.net/ (agencia eCommerce, Shopify 
 - `context/CONTEXTO.md` — briefing del cliente, análisis de la web actual, benchmark.
 - `context/propuesta-home.md` — estructura de contenidos de la home aprobada.
 - `context/design.md` — **NORMAS DE DISEÑO acordadas con el cliente. Consultar antes de cualquier cambio visual; toda norma nueva se registra ahí.**
+- `context/seo.md` — **NORMAS DE SEO y SEGURIDAD.** Entrega = HTML estático sin CMS. Plantilla obligatoria de `<head>`, canónicas, Open Graph, JSON-LD, `sitemap.xml`/`robots.txt`, semántica de encabezados y hardening. Consultar al crear/editar cualquier página o sección.
 
 ## Decisiones cerradas con el cliente (no re-litigar)
 
@@ -25,7 +26,8 @@ Propuesta de rediseño de https://www.csengine.net/ (agencia eCommerce, Shopify 
 
 - `design-tokens.json` → fuente de verdad, **3 niveles: primitivas → semánticas → de componente**. Genera `styles/tokens.css` con `node tools/tokens-to-css.mjs`. **Nunca editar tokens.css a mano.**
 - `styles/components.css` → **ÚNICO archivo de estilos** (sin CSS por página). Capa congelada; un componente nuevo se añade aquí + tier `component` de tokens + `design-system.html`.
-- **NADA hardcodeado en CSS:** colores solo vía `--color-*`/componente; gaps/paddings/margins solo vía `--sp-*`/ritmo; medidas vía `--measure-*`. Ver `context/design.md` §2.
+- **NADA hardcodeado en CSS:** colores solo vía `--color-*`/componente; gaps/paddings/margins solo vía `--sp-*`/ritmo; grosores de línea vía `--bw-*`; medidas de componente en su tier `component`; max-widths vía `--measure-*`. Ver `context/design.md` §2.
+- **Espaciado en REJILLA BASE-8:** la escala `--sp-*` son múltiplos de 8 (+ sub-pasos 4/12/20). No crear valores intermedios sueltos; si falta un peldaño se añade a la escala en base-8.
 - `js/main.js` → animaciones compartidas por convención de atributos (`data-hero`, `data-reveal`, `data-parallax`, `data-count`). No duplicar lógica GSAP en páginas.
 - `design-system.html` → hand-off vivo: tokens, componentes, mapa de páginas.
 
@@ -43,7 +45,8 @@ En este repo trabajan **dos personas con sus IAs**. Coordinación obligatoria v�
 2. `font-size` siempre `var(--fs-*)` — validado por el mismo lint (warning).
 3. Toda clase usada en HTML debe existir en CSS — mismo lint (warning).
 4. Página nueva: anclarse a la página existente más parecida (servicios → `shopify.html`; contenido → `nosotros.html`), reusar header/footer/CTA tal cual y solo cambiar el contenido.
-5. Antes de dar por terminada cualquier página: `cd prototipo && node tools/lint-tokens.mjs` debe salir limpio.
+5. Página/sección nueva: aplicar el bloque `<head>` SEO y el checklist de `context/seo.md` (título/description únicos, canónica, OG, un solo `<h1>`, alta en `sitemap.xml`, `<script>` de terceros con SRI). Mantener los metatags al día cuando cambie el contenido.
+6. Antes de dar por terminada cualquier página: `cd prototipo && node tools/lint-tokens.mjs` debe salir limpio.
 
 ## Datos del cliente que no hay que inventar
 

@@ -4,26 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Design System — Prototipo CSengine</title>
+<meta name="robots" content="noindex, nofollow">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles/tokens.css">
 <link rel="stylesheet" href="styles/components.css">
 <style>
   /* estilos exclusivos de esta página de documentación (namespace ds-, whitelisteado en lint) */
-  .ds-main{max-width:var(--measure-doc);margin:0 auto;padding:var(--sp-130) var(--gutter) var(--sp-80)}
+  .ds-main{max-width:var(--measure-doc);margin:0 auto;padding:var(--sp-128) var(--gutter) var(--sp-80)}
   .ds-main h1{font-size:var(--fs-h2);margin-bottom:var(--sp-8)}
-  .ds-main .ds-sub{color:var(--color-text-soft);margin-bottom:var(--sp-60)}
-  .ds-main h2{font-size:var(--fs-xl);margin:var(--sp-70) 0 var(--sp-24);border-bottom:var(--bw-2) solid var(--color-accent);padding-bottom:var(--sp-10)}
-  .ds-main h3{font-size:var(--fs-md);margin:var(--sp-30) 0 var(--sp-14);color:var(--color-text-soft)}
+  .ds-main .ds-sub{color:var(--color-text-soft);margin-bottom:var(--sp-64)}
+  .ds-main h2{font-size:var(--fs-xl);margin:var(--sp-72) 0 var(--sp-24);border-bottom:var(--bw-2) solid var(--color-accent);padding-bottom:var(--sp-8)}
+  .ds-main h3{font-size:var(--fs-md);margin:var(--sp-32) 0 var(--sp-16);color:var(--color-text-soft)}
   .ds-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:var(--sp-16)}
   .ds-swatch{border:var(--bw-1) solid var(--color-border);border-radius:var(--r-md);overflow:hidden;font-size:var(--fs-xs)}
   .ds-swatch i{display:block;height:var(--mlogo-h)}
-  .ds-swatch code{display:block;padding:var(--sp-10) var(--sp-12);background:var(--color-surface)}
+  .ds-swatch code{display:block;padding:var(--sp-8) var(--sp-12);background:var(--color-surface)}
   table.ds-table{width:100%;border-collapse:collapse;font-size:var(--fs-sm)}
-  .ds-table th,.ds-table td{text-align:left;padding:var(--sp-12) var(--sp-14);border-bottom:var(--bw-1) solid var(--color-border);vertical-align:top}
+  .ds-table th,.ds-table td{text-align:left;padding:var(--sp-12) var(--sp-16);border-bottom:var(--bw-1) solid var(--color-border);vertical-align:top}
   .ds-table th{font-family:var(--font-display);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted)}
-  .ds-table code{background:var(--color-accent-soft);color:var(--color-accent-deep);padding:var(--sp-4) var(--sp-8);border-radius:var(--sp-6)}
-  .ds-type div{border-bottom:var(--bw-1) solid var(--color-border);padding:var(--sp-14) 0}
-  .ds-note{background:var(--color-accent-soft);border-radius:var(--r-md);padding:var(--sp-18) var(--sp-22);font-size:var(--fs-sm);color:var(--color-text)}
+  .ds-table code{background:var(--color-accent-soft);color:var(--color-accent-deep);padding:var(--sp-4) var(--sp-8);border-radius:var(--sp-8)}
+  .ds-type div{border-bottom:var(--bw-1) solid var(--color-border);padding:var(--sp-16) 0}
+  .ds-note{background:var(--color-accent-soft);border-radius:var(--r-md);padding:var(--sp-16) var(--sp-24);font-size:var(--fs-sm);color:var(--color-text)}
 </style>
 </head>
 <body>
@@ -57,7 +58,7 @@
     <div class="ds-swatch"><i style="background:var(--gray-900)"></i><code>--gray-900</code></div>
     <div class="ds-swatch"><i style="background:var(--gray-950)"></i><code>--gray-950</code></div>
   </div>
-  <p style="margin-top:14px;font-size:var(--fs-sm);color:var(--color-text-soft)">+ alfas (<code>--gray-50-a12/20/65/82</code>, <code>--gray-900-a25/80</code>, <code>--white-a15</code>), fuentes (<code>--font-sora</code>, <code>--font-montserrat</code>), escala tipográfica <code>--fs-*</code>, espacios <code>--sp-1..8</code>, radios <code>--r-*</code> y sombras <code>--shadow-*</code>.</p>
+  <p style="margin-top:var(--sp-16);font-size:var(--fs-sm);color:var(--color-text-soft)">+ alfas (<code>--gray-50-a12/20/65/82</code>, <code>--gray-900-a25/80</code>, <code>--white-a15</code>), fuentes (<code>--font-sora</code>, <code>--font-montserrat</code>), escala tipográfica <code>--fs-*</code>, espacios <code>--sp-*</code> (rejilla base-8: 4·8·12·16·20·24·32·40·48·56·64·72·80·88·96·112·128·144·152·160·200), grosores de línea <code>--bw-*</code>, radios <code>--r-*</code> y sombras <code>--shadow-*</code>.</p>
 
   <h3>2 · Semánticas</h3>
   <div class="ds-grid">
@@ -73,7 +74,7 @@
     <div class="ds-swatch"><i style="background:var(--color-accent-soft)"></i><code>--color-accent-soft</code></div>
     <div class="ds-swatch"><i style="background:var(--color-accent-deep)"></i><code>--color-accent-deep</code></div>
   </div>
-  <p style="margin-top:14px;font-size:var(--fs-sm);color:var(--color-text-soft)">+ inversas para fondos oscuros (<code>--color-text-inverse(-soft)</code>, <code>--color-border-inverse(-soft)</code>) y fuentes (<code>--font-display</code>, <code>--font-body</code>).</p>
+  <p style="margin-top:var(--sp-16);font-size:var(--fs-sm);color:var(--color-text-soft)">+ inversas para fondos oscuros (<code>--color-text-inverse(-soft)</code>, <code>--color-border-inverse(-soft)</code>) y fuentes (<code>--font-display</code>, <code>--font-body</code>).</p>
 
   <h3>3 · De componente (muestra)</h3>
   <p style="font-size:var(--fs-sm);color:var(--color-text-soft)"><code>--header-*</code> <code>--btn-*</code> <code>--preloader-*</code> <code>--hl-underline</code> <code>--ghost-stroke(-inverse)</code> <code>--mlogo-*</code> <code>--stat-*</code> <code>--card-*</code> <code>--svc-*</code> <code>--factory-*</code> <code>--proj-*</code> <code>--anniv-*</code> <code>--timeline-track</code> <code>--quote-mark-color</code> <code>--field-*</code> <code>--footer-*</code> <code>--seal-*</code> <code>--filter-active-*</code> <code>--hero-badge-*</code> <code>--chip-*</code> — ver el tier <code>component</code> de <code>design-tokens.json</code>.</p>

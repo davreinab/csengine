@@ -1,0 +1,9 @@
+# robots.txt — CSengine
+# ESTADO ACTUAL: PROTOTIPO EN PRUEBAS → no indexar.
+# La señal real de no-indexación es <meta name="robots" content="noindex, nofollow"> en cada página.
+# Al lanzar a producción: poner "Allow: /", quitar el "Disallow: /", reactivar la línea Sitemap
+# y cambiar los <meta robots> de las páginas a "index, follow, max-image-preview:large, max-snippet:-1".
+User-agent: *
+Disallow: /
+
+# Sitemap: https://www.csengine.net/sitemap.xml

@@ -10,6 +10,14 @@
 
 ---
 
+## 2026-07-31 · David + Claude · (este push)
+- **SEO (todas las páginas):** bloque `<head>` completo por página — `title`/`description` únicos, `canonical`, Open Graph, Twitter Card, favicon (símbolo SVG), `theme-color`, `referrer`. Home con JSON-LD `Organization`+`WebSite` (2 oficinas). Nuevos `robots.txt` y `sitemap.xml` en `prototipo/`. Dominio base: `https://www.csengine.net`. **Al tocar contenido, actualizar sus metatags + `lastmod`.** Normas nuevas en `context/seo.md`.
+- ⚠️ **PROTOTIPO = NO INDEXAR (temporal):** todas las páginas con `<meta robots noindex, nofollow>` y `robots.txt` en `Disallow: /`. El resto del SEO queda montado pero inerte. Para lanzar: revertir robots (pasos en `context/seo.md`, nota de estado al principio).
+- **Seguridad:** GSAP movido a **cdnjs con SRI** (`integrity` SHA-512 + `crossorigin`) en las 8 páginas — si cambias versión de GSAP, regenera el hash o no cargará. Cabeceras de servidor recomendadas (CSP, HSTS…) documentadas en `context/seo.md` §7.
+- ⚠️ **Espaciado migrado a REJILLA BASE-8** (afecta a todo el CSS): `design-tokens.json` reescribe la escala `--sp-*` a múltiplos de 8 (+sub-pasos 4/12/20); desaparecen `--sp-6/10/14/18/22/26/28/30/34/36/38/44/60/70/90/110/130/140/150` y aparecen `--sp-72/88/112/128/144/152`. **`tokens.css` regenerado** (`node tools/tokens-to-css.mjs`) — no lo edites a mano. Deriva visual máx. ~4-8px por snap. Si algún gap tuyo quedó raro, reasígnalo a un peldaño de la escala.
+- **Limpieza CSS:** eliminadas clases muertas `.team/.team-grid/.member` (sección equipo ya no existe). Hardcodeos `90px/60px` (columna `.svc`) y `min(320px,60vw)` (barra preloader) → tokens `--svc-idx-col`, `--svc-idx-col-sm`, `--preloader-bar-w`. Lint verde (0/0, 107 clases).
+- Normas nuevas registradas: `context/design.md` §2 (base-8 + `--bw-*`), `context/seo.md` (SEO+seguridad), `CLAUDE.md` (reglas 5 y 6).
+
 ## 2026-07-30 · David + Claude · (este push)
 - **Home:** nueva sección **"Plataformas & partners"** (grid único de logos grises, hover a color) colocada tras la sección editorial y antes de Servicios. Logos oficiales en `prototipo/img_d/partners/` (Shopify, Magento, Adobe Commerce, Adyen, Nosto, Trusted Shops). Falta **Sysadminok** (no está en fuentes públicas): pendiente de archivo.
 - ⚠️ **Ojo divergencia de carpeta:** yo usé `img_d/partners/` y tú creaste `img_d/Logos partners/`. Unifiquemos en una sola; ahora mismo la sección apunta a `partners/`. Si prefieres tu carpeta, muevo assets y reapunto `src`.

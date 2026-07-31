@@ -2,7 +2,7 @@
 
 > Normas acordadas con el cliente. Toda decisión visual nueva se registra AQUÍ.
 > Complementa a `CONTEXTO.md` (briefing) y a `CLAUDE.md` (reglas operativas).
-> Última actualización: 2026-07-03.
+> Última actualización: 2026-07-31.
 
 ## 1. Resaltado de palabras (NORMA)
 
@@ -14,10 +14,12 @@
 ## 2. Variables y color (NORMA — arquitectura de 3 niveles)
 
 - **Fuente de verdad:** `design-tokens.json` → genera `styles/tokens.css` (`node tools/tokens-to-css.mjs`). **Tres niveles:**
-  1. **Primitivas** — valores crudos: escalas de color (`--lime-*`, `--gray-*`), fuentes, `--fs-*`, espaciado `--sp-*` (nombrado por px), bordes `--bw-*`, radios `--r-*`, sombras.
+  1. **Primitivas** — valores crudos: escalas de color (`--lime-*`, `--gray-*`), fuentes, `--fs-*`, espaciado `--sp-*` (nombrado por px), grosores de línea `--bw-*`, radios `--r-*`, sombras.
   2. **Semánticas** — roles: `--color-page/surface/text/accent/border...`, `--font-display/body`, ritmo (`--sect-pad`, `--gutter`, `--grid-gap*`), medidas de texto `--measure-*`.
   3. **De componente** — `--btn-*`, `--card-*`, `--mlogo-*`, `--factory-*`, `--field-*`… referencian semánticas.
-- **NADA hardcodeado en el CSS:** todo estilo se aplica con `var()`. Colores SIEMPRE vía semánticas/componente (nunca primitivas de color directamente); **gaps, paddings y margins SIEMPRE vía `--sp-*` o tokens de ritmo**; max-widths vía `--measure-*`. Excepción documentada: offsets decorativos en vw/% (palabras fantasma) y valores tipográficos relativos (line-height, letter-spacing).
+- **Espaciado en REJILLA BASE-8 (NORMA):** la escala `--sp-*` son múltiplos de 8 con **`4` como unidad mínima proporcional** para ajustes finos (sub-pasos de 4: `4·12·20`). Escala completa: `4·8·12·16·20·24·32·40·48·56·64·72·80·88·96·112·128·144·152·160·200`. El `4` está permitido y a veces hace falta; lo que se evita son valores fuera de la rejilla. Cualquier gap/padding/margin nuevo se elige de esta escala; nada de valores intermedios sueltos (no crear `--sp-30`, `--sp-18`, etc.). Si falta un peldaño, se añade manteniendo la base-8 (+ sub-paso 4).
+- **Grosores de línea SIEMPRE vía `--bw-*`** (`--bw-1` 1px, `--bw-15` 1.5px, `--bw-2` 2px). Ningún `1px/2px` crudo en bordes, subrayados ni `-webkit-text-stroke`.
+- **NADA hardcodeado en el CSS:** todo estilo se aplica con `var()`. Colores SIEMPRE vía semánticas/componente (nunca primitivas de color directamente); **gaps, paddings y margins SIEMPRE vía `--sp-*` o tokens de ritmo**; medidas propias de un componente (anchos de columna, altos fijos…) en su tier `component`, nunca px sueltos en la regla; max-widths de texto vía `--measure-*`. Excepción documentada: offsets decorativos en vw/% (palabras fantasma), breakpoints de `@media` (las CSS vars no funcionan ahí) y valores tipográficos relativos (line-height, letter-spacing).
 - **Un único archivo de estilos:** `styles/components.css`. **Sin CSS por página** (decisión del cliente 2026-07-05).
 - Mantener los colores del logo: verde lima (semántica `--color-accent`) y su gama.
 - Ritmo de fondos de la home: claro → claro → oscuro (fábrica) → claro → lima (aniversario) → claro → oscuro (footer).
