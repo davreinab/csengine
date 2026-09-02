@@ -10,7 +10,10 @@
 
 ---
 
-## 2026-07-31 · David + Claude · (este push)
+## 2026-09-02 · David + Claude · (este push)
+- ⚠️ **Instrucciones de IA reorganizadas:** el contenido de `CLAUDE.md` se movió íntegro a **`AGENTS.md`** (nuevo archivo canónico, válido para cualquier agente: Claude, Codex, Copilot, Gemini…). `CLAUDE.md` queda como puntero (`@AGENTS.md`) y se añaden punteros `GEMINI.md` y `.github/copilot-instructions.md`. **Toda norma nueva va a `AGENTS.md` o `context/`, nunca a los punteros.** Codex lee `AGENTS.md` nativo.
+- Eliminada la carpeta `bench/` (capturas de benchmark ya asimiladas en `context/CONTEXTO.md`).
+- **Revisión pre-producción hecha** (lint 0/0, assets, SRI, SEO, a11y). Bloqueantes detectados y PENDIENTES antes de subir a servidor real: 1) revertir noindex/robots (pasos en `context/seo.md`); 2) el form de contacto no envía (`onsubmit="return false"`, falta endpoint); 3) sin fallback si GSAP no carga → la home queda tapada por el preloader. Importantes: `og:image` en SVG (las redes no lo pintan; hace falta PNG 1200×630), sin enlaces `tel:`/`mailto:`, Google Fonts remoto (RGPD → self-host), decidir si `design-system.html` se despliega.
 - **SEO (todas las páginas):** bloque `<head>` completo por página — `title`/`description` únicos, `canonical`, Open Graph, Twitter Card, favicon (símbolo SVG), `theme-color`, `referrer`. Home con JSON-LD `Organization`+`WebSite` (2 oficinas). Nuevos `robots.txt` y `sitemap.xml` en `prototipo/`. Dominio base: `https://www.csengine.net`. **Al tocar contenido, actualizar sus metatags + `lastmod`.** Normas nuevas en `context/seo.md`.
 - ⚠️ **PROTOTIPO = NO INDEXAR (temporal):** todas las páginas con `<meta robots noindex, nofollow>` y `robots.txt` en `Disallow: /`. El resto del SEO queda montado pero inerte. Para lanzar: revertir robots (pasos en `context/seo.md`, nota de estado al principio).
 - **Seguridad:** GSAP movido a **cdnjs con SRI** (`integrity` SHA-512 + `crossorigin`) en las 8 páginas — si cambias versión de GSAP, regenera el hash o no cargará. Cabeceras de servidor recomendadas (CSP, HSTS…) documentadas en `context/seo.md` §7.
