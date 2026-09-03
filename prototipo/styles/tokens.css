@@ -142,8 +142,8 @@
   --chip-bg: var(--color-surface);
   --chip-dot-color: var(--color-accent);
   --chip-dot-size: 10px;
-  --mlogo-w: 180px;
-  --mlogo-h: 64px;
+  --mlogo-w: 224px;
+  --mlogo-h: 80px;
   --mlogo-color: var(--gray-400);
   --mlogo-gap: var(--sp-56);
   --partner-col-min: 190px;
@@ -151,7 +151,7 @@
   --partner-card-bg: var(--color-surface);
   --partner-card-border: var(--color-border);
   --partner-card-radius: var(--r-lg);
-  --partner-card-pad: var(--sp-32) var(--sp-32);
+  --partner-card-pad: var(--sp-32) var(--sp-24);
   --partner-gap: var(--sp-24);
   --office-map-h: 220px;
   --stat-accent: var(--color-accent);

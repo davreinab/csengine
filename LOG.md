@@ -10,7 +10,10 @@
 
 ---
 
-## 2026-09-02 · David + Claude · (este push)
+## 2026-09-03 · David + Claude · (este push)
+- **Home / marquee clientes:** más aire entre titular y logos (`.logos-note` margin-bottom `--sp-48`→`--sp-80`) y logos más grandes (`--mlogo-w/h` 180×64→224×80).
+- **Home / partners:** los 6 logos sustituidos por versiones oficiales nuevas en `img_d/partners/` (shopify/adyen/trusted-shops ahora `.webp`; nosto y trusted-shops recortados al contenido). Los antiguos eliminados. **Los logos van ahora SIEMPRE a color** (fuera `grayscale` + hover en `.partner img`) — decisión de David; el marquee de clientes sigue en gris→color.
+- Pills de partners retocadas vía token `--partner-card-pad`: menos padding horizontal (24px) y +32px de altura (padding vertical 16→32). `tokens.css` regenerado, lint verde (0/0).
 - ⚠️ **Instrucciones de IA reorganizadas:** el contenido de `CLAUDE.md` se movió íntegro a **`AGENTS.md`** (nuevo archivo canónico, válido para cualquier agente: Claude, Codex, Copilot, Gemini…). `CLAUDE.md` queda como puntero (`@AGENTS.md`) y se añaden punteros `GEMINI.md` y `.github/copilot-instructions.md`. **Toda norma nueva va a `AGENTS.md` o `context/`, nunca a los punteros.** Codex lee `AGENTS.md` nativo.
 - Eliminada la carpeta `bench/` (capturas de benchmark ya asimiladas en `context/CONTEXTO.md`).
 - **Revisión pre-producción hecha** (lint 0/0, assets, SRI, SEO, a11y). Bloqueantes detectados y PENDIENTES antes de subir a servidor real: 1) revertir noindex/robots (pasos en `context/seo.md`); 2) el form de contacto no envía (`onsubmit="return false"`, falta endpoint); 3) sin fallback si GSAP no carga → la home queda tapada por el preloader. Importantes: `og:image` en SVG (las redes no lo pintan; hace falta PNG 1200×630), sin enlaces `tel:`/`mailto:`, Google Fonts remoto (RGPD → self-host), decidir si `design-system.html` se despliega.

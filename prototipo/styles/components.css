@@ -163,7 +163,7 @@ header{
 .logos-note{
   text-align:center;font-family:var(--font-display);font-weight:700;
   font-size:var(--fs-h3);color:var(--color-text);letter-spacing:-.01em;
-  margin-bottom:var(--sp-48);padding:0 var(--gutter);line-height:1.2;
+  margin-bottom:var(--sp-80);padding:0 var(--gutter);line-height:1.2;
 }
 .marquee{display:flex;width:max-content;animation:marquee 30s linear infinite}
 .marquee-inner{display:flex;align-items:center;gap:var(--mlogo-gap);padding-right:var(--mlogo-gap)}
@@ -195,10 +195,8 @@ header{
   display:flex;align-items:center;justify-content:center
 }
 .partner img{
-  height:var(--partner-box-h);width:auto;max-width:100%;object-fit:contain;display:block;
-  filter:grayscale(1);opacity:.55;transition:filter .25s,opacity .25s
+  height:var(--partner-box-h);width:auto;max-width:100%;object-fit:contain;display:block
 }
-.partner:hover img{filter:none;opacity:1}
 
 /* ---------- Cifras ---------- */
 .stats{padding:var(--sect-pad-sm) 0}
