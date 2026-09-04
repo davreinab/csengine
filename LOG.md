@@ -11,6 +11,7 @@
 ---
 
 ## 2026-09-04 (noche) · David + Claude · (este push)
+- **shopify.html:** el módulo `.partner-featured` (Shopify Certified Partner) de la home se repite bajo las 3 cards de "Por qué Shopify"; regla nueva `.cards+.partner-featured` (margen 48px). Lint 0/0.
 - **Páginas legales reales:** `legal.html` (plantilla genérica) **eliminada** y sustituida por tres páginas con el contenido migrado de la web actual: `politica-de-privacidad.html`, `politica-de-cookies.html` (con las 2 tablas de cookies de Cookiebot) y `proteccion-de-datos.html` (CIF B-66860735 y contacto DPO, tal cual en la web actual). Mismo hero `.page-hero` con enlaces cruzados; footer "Legal" enlazado a las tres en las 11 páginas; sitemap actualizado (11 URLs).
 - CSS `.legal-body`: tablas (`.table-wrap` con scroll horizontal en móvil, token `--legal-table-min` 640px), enlaces subrayados lima, separación lista→párrafo. `design-system.html` al día. Lint 0/0.
 - Avisos: los textos legales originales usan **info@csengine.net** (el briefing dice .es) — se respetó el original, pendiente de unificar con el cliente. La declaración de cookies depende de Cookiebot: al lanzar la web nueva hay que reinstalar el gestor de consentimiento y regenerar la tabla (nota en la propia página).

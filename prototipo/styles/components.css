@@ -210,6 +210,7 @@ header{
   border-radius:var(--partner-card-radius);padding:var(--partner-feat-pad);
   display:grid;grid-template-columns:var(--partner-feat-logo) 1fr;gap:var(--partner-feat-gap);align-items:center
 }
+.cards+.partner-featured{margin-top:var(--grid-gap-lg)}   /* tras una rejilla de cards (shopify.html) */
 .partner-featured img{width:var(--partner-feat-logo);height:auto;display:block}
 .partner-featured h3{font-size:var(--fs-h3);font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sp-12)}
 .partner-featured p{color:var(--color-text-soft);font-size:var(--fs-md)}
