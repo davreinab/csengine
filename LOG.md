@@ -11,6 +11,7 @@
 ---
 
 ## 2026-09-04 · David + Claude · (este push)
+- **GitHub Pages:** nuevo workflow `.github/workflows/pages.yml` que publica `prototipo/` en **https://davreinab.github.io/csengine/** en cada push a `main` (se activa solo; también lanzable a mano desde Actions). Sirve para revisar el prototipo sin servidor local. Como el prototipo ya va con `noindex` + `Disallow: /`, no se indexa.
 - **Home / partners:** el sello de **Trusted Shops** (archivo cuadrado 512×512) se veía diminuto con la altura fija de 46px. Nuevo modificador `.partner--seal` (tokens `--partner-seal-h` 80px + `--partner-seal-pad` con vertical compensado) para sellos/logos cuadrados; la fila mantiene su altura. Colocado tras `.partner img` en el CSS para ganar en cascada.
 - **Home / partners:** nuevo **módulo destacado "Shopify Certified Partner"** a ancho completo bajo el grid de logos: clase `.partner-featured` (misma superficie/borde/radio que las pills), sello a la izquierda (224px desktop / 112px móvil, `img_d/partners/shopify-certified-partner.png`) y H3 + 2 párrafos a la derecha con copy SEO ("agencia Shopify Certified Partner", "agencia Shopify certificada", Barcelona/Altea). Apila en ≤960px. Tokens `--partner-feat-*` nuevos.
 - **SEO home:** `description` reescrita con la certificación (160 chars) y `lastmod` del sitemap a 2026-09-04. `design-system.html`: fila "Partners" en la tabla de componentes.
