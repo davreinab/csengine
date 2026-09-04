@@ -395,9 +395,15 @@ header{
 .legal-body h3{font-size:var(--fs-lg);font-weight:700;margin:var(--sp-32) 0 var(--sp-8)}
 .legal-body p,.legal-body li{color:var(--color-text-soft);line-height:1.7}
 .legal-body b{color:var(--color-text);font-weight:600}
-.legal-body p+p{margin-top:var(--sp-16)}
+.legal-body p+p,.legal-body ul+p,.legal-body .table-wrap+p{margin-top:var(--sp-16)}
 .legal-body ul{margin:var(--sp-16) 0 0 var(--sp-24);display:grid;gap:var(--sp-8)}
+.legal-body a{color:var(--color-text);text-decoration:underline;text-decoration-color:var(--color-accent);text-decoration-thickness:var(--bw-2)}
+.legal-body a:hover{color:var(--color-accent-deep)}
 .legal-body .legal-note{margin-top:var(--sp-32);font-size:var(--fs-sm);color:var(--color-text-muted);border-left:var(--bw-2) solid var(--color-accent);padding-left:var(--sp-16)}
+.legal-body .table-wrap{overflow-x:auto;margin-top:var(--sp-16)}
+.legal-body table{width:100%;min-width:var(--legal-table-min);border-collapse:collapse;font-size:var(--fs-sm)}   /* en móvil desplaza dentro de .table-wrap */
+.legal-body th,.legal-body td{text-align:left;vertical-align:top;padding:var(--sp-8) var(--sp-12);border-bottom:var(--bw-1) solid var(--color-border);color:var(--color-text-soft);line-height:1.5}
+.legal-body th{color:var(--color-text);font-weight:600}
 
 /* ---------- Bloque CTA + formulario ---------- */
 .contact{padding:var(--sect-pad) 0}

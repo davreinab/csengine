@@ -109,8 +109,8 @@
     <tr><td>Valores</td><td><code>.values</code> + <code>.cards</code>/<code>.card</code></td><td>Página Nosotros: "En qué creemos" en cards genéricas sobre fondo surface. (La sección Equipo se eliminó; sus clases ya no existen.)</td></tr>
     <tr><td>Oficinas</td><td><code>.locations</code> <code>.offices</code> <code>.card</code> + <code>.office-map</code></td><td>Nosotros y Contacto (mismo bloque): 2 cards Barcelona / Altea con dirección, teléfono, email y mapa OpenStreetMap embebido (gris → color en hover).</td></tr>
     <tr><td>CTA + formulario</td><td><code>.contact</code> <code>.field</code> <code>.meta</code></td><td>Cierre de todas las páginas (padding <code>--sect-pad</code> arriba y abajo). Cuando el <code>.contact</code> entra en pantalla, el CTA anclado móvil se oculta.</td></tr>
-    <tr><td>Footer</td><td><code>.foot-top</code> <code>.foot-logo</code> <code>.foot-claim</code> <code>.seal</code></td><td>Logo oficial blanco + sello 20 años + columnas Servicios / Compañía / Legal (los enlaces legales apuntan a las anclas de <code>legal.html</code>). En ≤960px las columnas se apilan bajo el claim. (Sin wordmark tipográfico gigante: no pega con el logo — decisión del cliente.)</td></tr>
-    <tr><td>Textos legales</td><td><code>.legal-doc</code> <code>.legal-body</code> <code>.legal-note</code></td><td>Página Legal: texto corrido a <code>--measure-3xl</code> con H2 anclables (<code>scroll-margin-top</code>), H3, listas y notas con borde lima. El hero reutiliza <code>.page-hero</code> + <code>.hero-ctas</code> como índice de saltos.</td></tr>
+    <tr><td>Footer</td><td><code>.foot-top</code> <code>.foot-logo</code> <code>.foot-claim</code> <code>.seal</code></td><td>Logo oficial blanco + sello 20 años + columnas Servicios / Compañía / Legal (Privacidad, Cookies y Protección de datos enlazan a sus tres páginas). En ≤960px las columnas se apilan bajo el claim. (Sin wordmark tipográfico gigante: no pega con el logo — decisión del cliente.)</td></tr>
+    <tr><td>Textos legales</td><td><code>.legal-doc</code> <code>.legal-body</code> <code>.legal-note</code></td><td>Páginas legales (privacidad, cookies, protección de datos): texto corrido a <code>--measure-3xl</code> con H2, H3, listas, tablas (<code>.table-wrap</code>) y notas con borde lima. El hero reutiliza <code>.page-hero</code> + <code>.hero-ctas</code> con enlaces cruzados a las otras dos páginas legales.</td></tr>
     <tr><td>Utilidades</td><td><code>.section-flush</code> <code>.sec-head</code> <code>.hl</code></td><td>Quitar padding-top (la regla vive al final de <code>components.css</code>, justo antes del <code>@media</code>, para ganar la cascada a las secciones) / encabezado de sección / <b>resaltado de palabras: ÚNICO efecto permitido, subrayado marcador lima</b> (global, vale en claro y oscuro).</td></tr>
   </table>
 
@@ -138,7 +138,9 @@
     <tr><td>Proyectos</td><td><code>proyectos.html</code></td></tr>
     <tr><td>Nosotros</td><td><code>nosotros.html</code></td></tr>
     <tr><td>Contacto</td><td><code>contacto.html</code></td></tr>
-    <tr><td>Textos legales</td><td><code>legal.html</code> (anclas <code>#aviso-legal</code> · <code>#privacidad</code> · <code>#cookies</code> · <code>#proteccion-datos</code>; sin CTA anclado)</td></tr>
+    <tr><td>Política de privacidad</td><td><code>politica-de-privacidad.html</code> (contenido migrado de la web actual; sin CTA anclado)</td></tr>
+    <tr><td>Política de cookies</td><td><code>politica-de-cookies.html</code> (contenido migrado; tablas de cookies)</td></tr>
+    <tr><td>Protección de datos</td><td><code>proteccion-de-datos.html</code> (contenido migrado)</td></tr>
   </table>
   <p style="margin-top:14px;color:var(--color-text-soft);font-size:var(--fs-sm)">Sin CSS por página: todas las páginas cargan solo <code>tokens.css</code> + <code>components.css</code>.</p>
 </main>
