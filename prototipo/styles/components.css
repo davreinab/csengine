@@ -197,6 +197,20 @@ header{
 .partner img{
   height:var(--partner-box-h);width:auto;max-width:100%;object-fit:contain;display:block
 }
+/* Sellos / logos cuadrados: más alto, padding compensado para no romper la fila */
+.partner--seal{padding:var(--partner-seal-pad)}
+.partner--seal img{height:var(--partner-seal-h)}
+/* Módulo destacado ancho completo (certificación): logo izq. + texto der. */
+.partner-featured{
+  margin-top:var(--partner-gap);
+  background:var(--partner-card-bg);border:var(--bw-1) solid var(--partner-card-border);
+  border-radius:var(--partner-card-radius);padding:var(--partner-feat-pad);
+  display:grid;grid-template-columns:var(--partner-feat-logo) 1fr;gap:var(--partner-feat-gap);align-items:center
+}
+.partner-featured img{width:var(--partner-feat-logo);height:auto;display:block}
+.partner-featured h3{font-size:var(--fs-h3);font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sp-12)}
+.partner-featured p{color:var(--color-text-soft);font-size:var(--fs-md)}
+.partner-featured p+p{margin-top:var(--sp-12)}
 
 /* ---------- Cifras ---------- */
 .stats{padding:var(--sect-pad-sm) 0}
@@ -432,5 +446,7 @@ footer{background:var(--footer-bg);color:var(--footer-text);padding:var(--sp-88)
   .svc{grid-template-columns:var(--svc-idx-col-sm) 1fr;row-gap:var(--sp-8)}
   .svc .arrow{display:none}
   .page-hero{padding-top:var(--sp-160)}
+  .partner-featured{grid-template-columns:1fr;gap:var(--sp-24);padding:var(--partner-feat-pad-sm)}
+  .partner-featured img{width:var(--partner-feat-logo-sm)}
   .offices{grid-template-columns:1fr}
 }

@@ -10,6 +10,12 @@
 
 ---
 
+## 2026-09-04 · David + Claude · (este push)
+- **Home / partners:** el sello de **Trusted Shops** (archivo cuadrado 512×512) se veía diminuto con la altura fija de 46px. Nuevo modificador `.partner--seal` (tokens `--partner-seal-h` 80px + `--partner-seal-pad` con vertical compensado) para sellos/logos cuadrados; la fila mantiene su altura. Colocado tras `.partner img` en el CSS para ganar en cascada.
+- **Home / partners:** nuevo **módulo destacado "Shopify Certified Partner"** a ancho completo bajo el grid de logos: clase `.partner-featured` (misma superficie/borde/radio que las pills), sello a la izquierda (224px desktop / 112px móvil, `img_d/partners/shopify-certified-partner.png`) y H3 + 2 párrafos a la derecha con copy SEO ("agencia Shopify Certified Partner", "agencia Shopify certificada", Barcelona/Altea). Apila en ≤960px. Tokens `--partner-feat-*` nuevos.
+- **SEO home:** `description` reescrita con la certificación (160 chars) y `lastmod` del sitemap a 2026-09-04. `design-system.html`: fila "Partners" en la tabla de componentes.
+- Lint verde (0/0). Pendiente ajeno a este push: la fila "Equipo" de `design-system.html` sigue listando clases borradas en julio.
+
 ## 2026-09-03 · David + Claude · (este push)
 - **Home / marquee clientes:** más aire entre titular y logos (`.logos-note` margin-bottom `--sp-48`→`--sp-80`) y logos más grandes (`--mlogo-w/h` 180×64→224×80).
 - **Home / partners:** los 6 logos sustituidos por versiones oficiales nuevas en `img_d/partners/` (shopify/adyen/trusted-shops ahora `.webp`; nosto y trusted-shops recortados al contenido). Los antiguos eliminados. **Los logos van ahora SIEMPRE a color** (fuera `grayscale` + hover en `.partner img`) — decisión de David; el marquee de clientes sigue en gris→color.
