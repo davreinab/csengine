@@ -6,6 +6,10 @@
    - [data-parallax-x]  parallax horizontal (palabras fantasma)
    - [data-count]       contador numérico hasta el valor indicado
    - .preloader         si existe (home), cuenta 0→20 y abre telón
+   - .nav-toggle        burger móvil: alterna body.menu-open (abre/cierra .nav-links)
+   - .sticky-cta        CTA anclado al pie (móvil): aparece al perder de vista los CTA del hero
+                        (.hero-ctas, o [data-sticky-anchor] si se quiere otro ancla) y se oculta
+                        mientras el módulo .contact está en pantalla.
 */
 gsap.registerPlugin(ScrollTrigger);
 
@@ -157,3 +161,35 @@ mm.add(
 );
 
 window.addEventListener("load", () => ScrollTrigger.refresh());
+
+/* ---------- Burger móvil ---------- */
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+if (navToggle && navLinks) {
+  const setMenu = (open) => {
+    document.body.classList.toggle("menu-open", open);
+    navToggle.setAttribute("aria-expanded", String(open));
+    navToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+  };
+  navToggle.addEventListener("click", () => setMenu(!document.body.classList.contains("menu-open")));
+  navLinks.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
+  window.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+}
+
+/* ---------- CTA anclado al pie (móvil) ----------
+   Aparece cuando el bloque ancla (CTA del hero, o el hero entero si no hay) sale por arriba,
+   y se oculta mientras el módulo .contact está en pantalla, para no duplicar el CTA. */
+const stickyCta = document.querySelector(".sticky-cta");
+if (stickyCta && "IntersectionObserver" in window) {
+  const anchor = document.querySelector("[data-sticky-anchor], .hero-ctas, .hero, .page-hero");
+  const contact = document.querySelector(".contact");
+  let pastAnchor = !anchor, contactInView = false;
+  const update = () => stickyCta.classList.toggle("is-visible", pastAnchor && !contactInView);
+  if (anchor) {
+    new IntersectionObserver(([e]) => { pastAnchor = !e.isIntersecting && e.boundingClientRect.bottom < 0; update(); }).observe(anchor);
+  }
+  if (contact) {
+    new IntersectionObserver(([e]) => { contactInView = e.isIntersecting; update(); }).observe(contact);
+  }
+  update();
+}

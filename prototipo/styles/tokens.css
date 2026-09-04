@@ -91,8 +91,8 @@
   --font-display: var(--font-sora);
   --font-body: var(--font-montserrat);
   --gutter: 5vw;
-  --sect-pad: var(--sp-144);
-  --sect-pad-sm: var(--sp-112);
+  --sect-pad: var(--sp-80);
+  --sect-pad-sm: var(--sp-64);
   --sect-gap-head: var(--sp-72);
   --grid-gap: var(--sp-32);
   --grid-gap-lg: var(--sp-48);
@@ -146,6 +146,8 @@
   --mlogo-h: 80px;
   --mlogo-color: var(--gray-400);
   --mlogo-gap: var(--sp-56);
+  --ed-photo-ratio: 16 / 9;
+  --ed-photo-ratio-sm: 4 / 3;
   --partner-col-min: 190px;
   --partner-box-h: 46px;
   --partner-seal-h: 80px;
@@ -156,10 +158,20 @@
   --partner-card-pad: var(--sp-32) var(--sp-24);
   --partner-gap: var(--sp-24);
   --partner-feat-logo: 224px;
-  --partner-feat-logo-sm: 112px;
+  --partner-feat-logo-sm: 176px;
   --partner-feat-pad: var(--sp-40) var(--sp-48);
   --partner-feat-pad-sm: var(--sp-32) var(--sp-24);
   --partner-feat-gap: var(--sp-48);
+  --header-h: 72px;
+  --nav-toggle-size: 44px;
+  --nav-toggle-w: 24px;
+  --nav-menu-fs: var(--fs-h2);
+  --nav-menu-gap: var(--sp-24);
+  --nav-menu-pad: var(--sp-40) var(--gutter);
+  --nav-social-size: 28px;
+  --nav-social-gap: var(--sp-24);
+  --sticky-cta-h: 80px;
+  --sticky-cta-pad: var(--sp-16) var(--gutter);
   --office-map-h: 220px;
   --stat-accent: var(--color-accent);
   --stat-border: var(--color-text);
@@ -176,6 +188,7 @@
   --svc-arrow-hover-color: var(--color-accent);
   --svc-arrow-size: 56px;
   --svc-pad: var(--sp-48) var(--sp-8);
+  --svc-pad-sm: var(--sp-24) var(--sp-8);
   --svc-preview-w: 280px;
   --factory-bg: var(--color-surface-dark);
   --factory-text: var(--color-text-inverse);
@@ -184,7 +197,7 @@
   --proj-tag-text: var(--color-text);
   --proj-result-color: var(--color-accent-deep);
   --proj-stagger: var(--sp-64);
-  --proj-info-pad: var(--sp-24) var(--sp-32) var(--sp-32);
+  --proj-info-pad: var(--sp-20) var(--sp-24) var(--sp-24);
   --anniv-bg: var(--color-accent);
   --anniv-text: var(--color-text);
   --anniv-word-gap: 0.6em;
