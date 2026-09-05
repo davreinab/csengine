@@ -160,6 +160,9 @@ header{
 .page-hero h1 .soft{color:var(--color-text-muted)}
 .page-hero .intro{font-size:var(--fs-md);color:var(--color-text-soft);max-width:var(--measure-xl);margin-bottom:var(--sp-40)}
 .page-hero .hero-ctas{display:flex;gap:var(--sp-16);flex-wrap:wrap}
+.page-hero .intro-row{display:flex;align-items:center;gap:var(--sp-64);margin-bottom:var(--sp-40)}
+.page-hero .intro-row .intro{margin-bottom:0}
+.page-hero .hero-seal img{width:var(--hero-seal-w);height:auto;display:block}
 
 /* ---------- Marquee logos clientes ---------- */
 .logos{padding:var(--sp-72) 0 var(--sp-64);overflow:hidden}
@@ -215,6 +218,16 @@ header{
 .partner-featured h3{font-size:var(--fs-h3);font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sp-12)}
 .partner-featured p{color:var(--color-text-soft);font-size:var(--fs-md)}
 .partner-featured p+p{margin-top:var(--sp-12)}
+/* Variante split (shopify.html): sin pastilla; H2 fijo en scroll a la izq., sello + explicación a la der. */
+.partner-featured--split{
+  grid-template-columns:1fr 1.1fr;align-items:start;
+  background:transparent;border:0;padding:0;
+}
+.partner-featured--split h2{
+  font-size:var(--fs-ed);font-weight:700;letter-spacing:-.02em;
+  position:sticky;top:calc(var(--header-h) + var(--sp-32));
+}
+.partner-featured--split .pf-body img{width:var(--partner-feat-logo-lg);margin-bottom:var(--sp-24)}
 
 /* ---------- Cifras ---------- */
 .stats{padding:var(--sect-pad-sm) 0}
@@ -431,10 +444,11 @@ footer{background:var(--footer-bg);color:var(--footer-text);padding:var(--sp-88)
 .foot-top a:hover{opacity:1;color:var(--color-accent)}
 .foot-logo{height:var(--footer-logo-h);width:auto;display:block;margin-bottom:var(--sp-20)}
 .foot-claim{font-family:var(--font-display);font-weight:600;font-size:var(--fs-lg);max-width:var(--measure-sm);line-height:1.4}
-.foot-claim .seal{
+.foot-top .seal{
   display:inline-flex;margin-top:var(--sp-24);background:var(--seal-bg);color:var(--seal-text);
   font-size:var(--fs-xs);font-weight:700;padding:var(--sp-8) var(--sp-16);border-radius:var(--r-pill);
 }
+.foot-plus{width:var(--footer-plus-w);height:auto;display:block;margin-top:var(--sp-32)}
 .foot-legal{
   display:flex;justify-content:space-between;gap:var(--sp-20);flex-wrap:wrap;
   border-top:var(--bw-1) solid var(--color-border-inverse-soft);padding-top:var(--sp-24);
@@ -499,7 +513,8 @@ footer{background:var(--footer-bg);color:var(--footer-text);padding:var(--sp-88)
   .hero{min-height:auto}
   .hero .wrap{grid-template-columns:1fr}
   .hero-ctas{flex-direction:column}
-  .hero-ctas .btn{width:100%;justify-content:center}
+  /* Todos los CTA a ancho completo en móvil (el del header está oculto) */
+  .btn{width:100%;justify-content:center}
   .hero-visual{display:none}
   .logos{padding:var(--sp-40) 0}
   .logos-note{margin-bottom:var(--sp-40)}
@@ -527,6 +542,11 @@ footer{background:var(--footer-bg);color:var(--footer-text);padding:var(--sp-88)
   .svc:hover{padding-left:var(--sp-8)}
   .svc .arrow{display:none}
   .page-hero{padding-top:var(--sp-160)}
+  .page-hero .intro-row{flex-direction:column;align-items:flex-start;gap:var(--sp-24)}
+  .page-hero .hero-seal img{width:var(--hero-seal-w-sm)}
   .partner-featured{grid-template-columns:1fr;gap:var(--sp-24);padding:var(--partner-feat-pad-sm)}
   .partner-featured img{width:var(--partner-feat-logo-sm);justify-self:center}
+  .partner-featured--split{padding:0}
+  .partner-featured--split h2{position:static}
+  .partner-featured--split .pf-body img{width:var(--partner-feat-logo);justify-self:start;margin-left:0;margin-right:auto}
 }

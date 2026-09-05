@@ -138,6 +138,8 @@
   --hero-badge-bg: var(--color-accent-soft);
   --hero-badge-text: var(--color-accent-deep);
   --hero-badge-logo-h: 18px;
+  --hero-seal-w: 224px;
+  --hero-seal-w-sm: 176px;
   --page-hero-pad-top: var(--sp-200);
   --chip-bg: var(--color-surface);
   --chip-dot-color: var(--color-accent);
@@ -159,6 +161,7 @@
   --partner-gap: var(--sp-24);
   --partner-feat-logo: 224px;
   --partner-feat-logo-sm: 176px;
+  --partner-feat-logo-lg: 320px;
   --partner-feat-pad: var(--sp-40) var(--sp-48);
   --partner-feat-pad-sm: var(--sp-32) var(--sp-24);
   --partner-feat-gap: var(--sp-48);
@@ -173,6 +176,7 @@
   --sticky-cta-h: 80px;
   --sticky-cta-pad: var(--sp-16) var(--gutter);
   --office-map-h: 220px;
+  --footer-plus-w: 176px;
   --legal-table-min: 640px;
   --stat-accent: var(--color-accent);
   --stat-border: var(--color-text);
